@@ -1,0 +1,64 @@
+:root {
+  --bg: #ffffff;
+  --text: #222222;
+  --link: #1a73e8;
+  --card: #f4f4f4;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #e0e0e0;
+  --link: #8ab4f8;
+  --card: #1e1e1e;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+  text-align: center;
+  padding: 2rem;
+}
+
+#mode-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+main {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  max-width: 800px;
+  margin: auto;
+  padding: 1rem;
+}
+
+section {
+  background: none;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.project-card-vertical p,
+.project-card-vertical h3 {
+  color: white !important;
+}
