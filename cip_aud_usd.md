@@ -32,3 +32,7 @@ CIP is a cornerstone of FX pricing. Persistent deviations reveal funding pressur
 ## Code Reference  
 See full code in the Finance Models repository:  
 `/finance-models/cip_aud_usd.ipynb`
+---
+layout: default
+title: AUD/USD CIP Model
+---
