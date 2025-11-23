@@ -10,7 +10,7 @@
     :root {
       --bg-color: #121212;
       --text-color: #ffffff;
-      --accent-color: #ffffff;
+      --accent-color: #00c3ff;
     }
 
     body {
@@ -32,7 +32,7 @@
     header nav h1 a {
       font-family: monospace;
       font-size: 1.2rem;
-      color: var(--accent-color);
+      color: var(--text-color);
       text-decoration: none;
       letter-spacing: 0.15em;
     }
@@ -49,50 +49,35 @@
       font-weight: 500;
     }
 
-    /* CLEAN GRID */
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    /* CARD STYLE */
-    .project-card {
-      width: 280px;
-      padding: 1.5rem;
-      background: rgba(0, 0, 0, 0.25);
-      border-radius: 1rem;
-      backdrop-filter: blur(8px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: white;
-      text-decoration: none;
-      display: block;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 195, 255, 0.25);
-    }
-
-    .project-card h3 {
-      margin: 0 0 0.5rem 0;
-      color: white;
-      font-size: 1.2rem;
-    }
-
-    .project-card p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: #cccccc;
-    }
-
     main {
-      max-width: 800px;
+      max-width: 650px;
       margin: auto;
       padding: 2rem;
+      text-align: left;
+    }
+
+    h2 {
       text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    /* MINIMAL PROJECT LIST */
+    .project-item {
+      margin-bottom: 1.8rem;
+    }
+
+    .project-item a {
+      font-size: 1.25rem;
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .project-item p {
+      margin: 0.3rem 0 0.5rem 0;
+      color: #ccc;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
 
     footer {
@@ -107,7 +92,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: radial-gradient(circle at center, rgba(255,255,255,0.07), transparent 60%);
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.07), transparent 60%);
       pointer-events: none;
       z-index: 1;
       transition: background 0.2s ease-out;
@@ -133,34 +118,35 @@
 <main>
   <h2>Projects</h2>
 
-  <div class="projects-grid">
+  <div class="projects-list">
 
-    <a href="cip_aud_usd.html" class="project-card">
-      <h3>AUD/USD CIP Model</h3>
-      <p>Interest parity analysis using spot-forward and rate spreads.</p>
-    </a>
+    <div class="project-item">
+      <a href="cip_aud_usd.html">AUD/USD CIP Model</a>
+      <p>Interest parity analysis using spot-forward rates and yield spreads.</p>
+    </div>
 
-    <a href="equity_risk.html" class="project-card">
-      <h3>Equity Risk Model</h3>
-      <p>OLS + Newey–West estimation for market sensitivity.</p>
-    </a>
+    <div class="project-item">
+      <a href="equity_risk.html">Equity Risk Model</a>
+      <p>OLS + Newey–West beta estimation for systematic risk.</p>
+    </div>
 
-    <a href="macro_ml_pipeline.html" class="project-card">
-      <h3>Macroeconomic Pipeline</h3>
-      <p>Econometrics + ML forecasting system for macro time series.</p>
-    </a>
+    <div class="project-item">
+      <a href="macro_ml_pipeline.html">Macroeconomic Pipeline</a>
+      <p>Econometrics + ML forecasting workflow for macro time series.</p>
+    </div>
 
-    <a href="geostartup_analytics.html" class="project-card">
-      <h3>GeoStartup Analytics</h3>
-      <p>Mapping global startup ecosystems with clustering and folium.</p>
-    </a>
+    <div class="project-item">
+      <a href="geostartup_analytics.html">GeoStartup Analytics</a>
+      <p>Mapping global startup ecosystems using clustering and folium.</p>
+    </div>
 
-    <a href="global_wellbeing.html" class="project-card">
-      <h3>Global Wellbeing Insights</h3>
-      <p>Life expectancy, income, and pollution relationships.</p>
-    </a>
+    <div class="project-item">
+      <a href="global_wellbeing.html">Global Wellbeing Insights</a>
+      <p>Life expectancy, income, and pollution relationships across countries.</p>
+    </div>
 
   </div>
+
 </main>
 
 <footer>
