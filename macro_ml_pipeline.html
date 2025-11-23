@@ -1,39 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Macroeconomic & Data Science Pipeline</title>
-  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --accent-color: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    header nav h1 a {
+      font-family: monospace;
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      text-decoration: none;
+      letter-spacing: 0.15em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #777;
+    }
+
+    .cursor-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.07), transparent 60%);
+      pointer-events: none;
+      z-index: 1;
+      transition: background 0.2s ease-out;
+    }
+  </style>
 </head>
 
 <body>
 
-  <div class="cursor-bg" id="cursor-bg"></div> <!-- FIXED -->
+  <div class="cursor-bg" id="cursor-bg"></div>
 
 <header>
   <nav>
-    <h1><a href="about.html">HANNAN</a></h1> <!-- FIXED PATH -->
+    <h1><a href="about.html">HANNAN</a></h1>
     <ul class="nav-links">
-      <li><a href="about.html">About</a></li> <!-- FIXED -->
-      <li><a href="projects.html" class="active">Projects</a></li> <!-- FIXED -->
-      <li><a href="resume.html">Experience</a></li> <!-- FIXED -->
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="resume.html">Experience</a></li>
     </ul>
   </nav>
 </header>
 
-<main style="max-width:900px;margin:auto;padding:2rem;">
+<main>
   <h2>Macroeconomic & Data Science Pipeline</h2>
 
   <p>
-    A complete macro-forecasting pipeline that integrates economic time-series modelling with machine learning.
-    The workflow includes unit-root testing, lag creation, feature engineering, ARIMA forecasting, OLS estimation,
-    and XGBoost modelling.
+    A complete macro-forecasting workflow that integrates economic time-series modelling with machine learning.
+    The pipeline covers unit-root testing, lag creation, feature engineering, ARIMA forecasting, OLS estimation,
+    and gradient-boosting (XGBoost) modelling.
   </p>
 
   <p>
-    This project shows how economists and data scientists combine theory-based methods with ML flexibility to build
-    scalable forecasting systems used in policy research and investment teams.
+    This project shows how economists and data scientists combine theoretical methods with ML flexibility to build
+    robust forecasting systems used in policy analysis and investment research.
   </p>
 
   <p style="margin-top:2rem;">
