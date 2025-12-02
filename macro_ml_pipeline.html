@@ -93,17 +93,16 @@
 
 
 <main>
-  <h2>Macroeconomic & Data Science Pipeline</h2>
+  <h2>Macroeconomic Recession-Signal Modeling Pipeline</h2>
 
   <p>
-    A complete macro-forecasting workflow that integrates economic time-series modelling with machine learning.
-    The pipeline covers unit-root testing, lag creation, feature engineering, ARIMA forecasting, OLS estimation,
-    and gradient-boosting (XGBoost) modelling.
+A straightforward pipeline that prepares monthly U.S. macroeconomic data (unemployment, yield curve, 
+industrial production, inflation, and policy rates), creates year-over-year and lagged features, and 
+trains three supervised models — logistic regression, random forest, and XGBoost — to classify recession vs non-recession months.
   </p>
 
-  <p>
-    This project shows how economists and data scientists combine theoretical methods with ML flexibility to build
-    robust forecasting systems used in policy analysis and investment research.
+  <p>TThe workflow includes data cleaning, resampling, feature engineering, time-based train/test 
+    splitting, ROC-AUC evaluation, and model interpretation using PCA and SHAP.
   </p>
 
   <p style="margin-top:2rem;">
