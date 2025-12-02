@@ -100,16 +100,15 @@
   <h2>Equity Risk Model (Newey–West Adjusted)</h2>
 
   <p>
-    This model estimates a stock’s systematic risk using OLS regression with Newey–West standard errors. 
-    Since equity returns commonly exhibit autocorrelation and heteroskedasticity, the HAC correction 
-    produces more reliable inference than standard OLS.
+   This analysis estimates a stock’s factor exposures using OLS regression 
+    and evaluates the reliability of the inference through standard econometric 
+    diagnostics. The workflow includes testing for heteroscedasticity, 
+    autocorrelation, non-normality, joint hypothesis tests, and HAC corrections.
+    Newey–West standard errors are applied to account for volatility clustering 
+    and short-run serial dependence in returns, providing more robust 
+    inference than conventional OLS — a standard approach in empirical asset-pricing and risk-modeling settings.
   </p>
 
-  <p>
-    The analysis includes rolling betas, volatility clustering checks, and HAC-corrected significance testing. 
-    These diagnostics align with the workflow used in quantitative equity, risk, and portfolio-research teams 
-    when evaluating factor exposures and market sensitivity.
-  </p>
 <h2>Source Code</h2>
 
 <pre><code id="pycode" class="language-python"></code></pre>
