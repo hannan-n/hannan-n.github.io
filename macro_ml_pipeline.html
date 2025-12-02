@@ -99,6 +99,17 @@
 
 <main>
   <h2>Macroeconomic Recession-Signal Modeling Pipeline</h2>
+
+  <p>
+A straightforward pipeline that prepares monthly U.S. macroeconomic data (unemployment, yield curve, 
+industrial production, inflation, and policy rates), creates year-over-year and lagged features, and 
+trains three supervised models — logistic regression, random forest, and XGBoost — to classify recession vs non-recession months.
+  </p>
+
+  <p>TThe workflow includes data cleaning, resampling, feature engineering, time-based train/test 
+    splitting, ROC-AUC evaluation, and model interpretation using PCA and SHAP.
+  </p>
+  
 <h2>Source Code</h2>
 
 <pre><code id="pycode" class="language-python"></code></pre>
@@ -111,17 +122,6 @@ fetch("macroeconomic_modeling.py")
     Prism.highlightAll();
   });
 </script>
-
-  <p>
-A straightforward pipeline that prepares monthly U.S. macroeconomic data (unemployment, yield curve, 
-industrial production, inflation, and policy rates), creates year-over-year and lagged features, and 
-trains three supervised models — logistic regression, random forest, and XGBoost — to classify recession vs non-recession months.
-  </p>
-
-  <p>TThe workflow includes data cleaning, resampling, feature engineering, time-based train/test 
-    splitting, ROC-AUC evaluation, and model interpretation using PCA and SHAP.
-  </p>
-
   <p style="margin-top:2rem;">
     <a href="https://github.com/Hannn1221/data-ml-projects" target="_blank">
       🔗 View Code on GitHub
