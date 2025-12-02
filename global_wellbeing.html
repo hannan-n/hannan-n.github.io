@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Global Wellbeing Insights</title>
@@ -92,18 +97,38 @@
 
 
 <main>
-  <h2>Global Wellbeing Insights</h2>
+  <h2>Measuring Global Wellbeing: Development, Income & Pollution</h2>
 
   <p>
-    This study evaluates wellbeing through life expectancy, income per capita, and PM2.5 pollution. It includes descriptive
-    statistics, indicator relationships, and cross-country development patterns that highlight disparities in health and 
-    environmental quality.
+This project analyzes global wellbeing using life expectancy, 
+    GDP per capita, a derived happiness proxy, and PM2.5 air-pollution data. 
+    The workflow merges Gapminder development indicators with World Bank pollution 
+    records, computes basic descriptive statistics, and evaluates variability 
+    using coefficients of variation.
+    Pairwise relationships are explored through scatterplots, KDE distributions, 
+    and a masked correlation heatmap. The analysis highlights how income, longevity, 
+    and a composite wellbeing proxy relate across countries, and how their distributions 
+    differ in scale, spread, and inequality.
   </p>
 
   <p>
     The project reflects how analysts use global datasets to understand development dynamics, environmental impacts, and
     socioeconomic trends across regions.
   </p>
+
+  
+<h2>Source Code</h2>
+
+<pre><code id="pycode" class="language-python"></code></pre>
+
+<script>
+fetch("global_wellbeing.py")   
+  .then(r => r.text())
+  .then(text => {
+    document.getElementById("pycode").textContent = text;
+    Prism.highlightAll();
+  });
+</script>
 
   <p style="margin-top:2rem;">
     <a href="https://github.com/Hannn1221/data-ml-projects" target="_blank" style="color:#00c3ff;">
