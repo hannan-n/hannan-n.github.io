@@ -6,6 +6,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
 
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GeoStartup Analytics</title>
 
@@ -88,8 +89,8 @@
     <h1><a href="about.html">HANNAN</a></h1>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="resume.html">Experience</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.html" class="active">Experience</a></li>
     </ul>
   </nav>
 </header>
@@ -99,13 +100,16 @@
   <h2>GeoStartup Analytics</h2>
 
   <p>
-    This project analyzes startup valuations with regression models and
-    interactive geospatial visualizations. The workflow cleans numeric fields,
-    estimates valuations using linear regression and random forests, computes
-    feature importance, and evaluates performance with R² and RMSE. The dataset
-    is mapped with Folium: regions are joined to coordinates, startups are
-    displayed via marker clustering and heatmaps, and marker size and color
-    highlight valuation and industry differences.
+    This project analyzes startup valuation data using basic regression models 
+    and interactive geospatial visualization. The workflow includes cleaning 
+    numeric fields, estimating valuation using linear regression and random 
+    forest models, computing feature importances, and evaluating predictive 
+    accuracy with R² and RMSE.
+    The dataset is also mapped using Folium: countries are assigned by region, 
+    coordinates are merged, and startups are displayed on an interactive world 
+    map with marker clustering and a geographic heatmap. Circle marker sizes 
+    scale with valuation, and industries are color-coded to show geographic 
+    and sector patterns.
   </p>
 
 <h2>Source Code</h2>
@@ -122,8 +126,9 @@ fetch("geostartup_analytics.py")
 </script>
 
   <p style="margin-top:2rem;">
-    <a href="https://github.com/Hannn1221/data-ml-projects" target="_blank">
-      View the code on GitHub
+    <a href="https://github.com/Hannn1221/data-ml-projects" 
+       target="_blank">
+      🔗 View Code on GitHub
     </a>
   </p>
 </main>
