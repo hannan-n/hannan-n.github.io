@@ -98,14 +98,17 @@ color:var(--muted-color);
 margin-bottom: 2rem;
 }
 
-/* --- NEW CSS FOR THE IMAGE --- */
+/* --- UPDATED CSS FOR THE IMAGE --- */
 .blog-banner {
-    max-width: 800px;
-    height: auto;
-    margin: 0 auto;
+    width: 100%; /* Makes it span the container width */
+    height: 250px; /* Adjust this value to make it shorter/taller */
+    object-fit: cover; /* Crops the image to fit the container without stretching */
+    object-position: center; /* Ensures the center of the image is visible */
+    
     border: 1px solid var(--border-color);
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    display: block; /* Centers the image */
+    display: block;                
+    margin-bottom: 2rem; /* Adds space between image and grid */
 }
 /* ----------------------------- */
 
