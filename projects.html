@@ -1,214 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hannan – Projects</title>
-  <link rel="stylesheet" href="style.css"/>
-  <style>
-    :root {
-      --bg-color: #121212;
-      --text-color: #ffffff;
-      --accent-color: #ffffff;
-      --border-color:#2a2a2a;
-    }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hannan – Projects</title>
+<link rel="stylesheet" href="style.css"/>
 
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'Segoe UI', sans-serif;
-      overflow-x: hidden;
-    }
+<style>
+:root {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --accent-color: #ffffff;
+  --muted-color: #888;
+  --card-bg: #1a1a1a;
+  --border-color: #2a2a2a;
+}
 
-    /* NAVBAR — SAME AS EXPERIENCE PAGE */
-    header nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      position: relative;
-      z-index: 10;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
 
-    header nav h1 a {
-      font-family: monospace;
-      font-size: 1.2rem;
-      color: var(--accent-color);
-      text-decoration: none;
-      letter-spacing: 0.15em;
-    }
+/* Cursor effect */
+.cursor-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      margin: 0 auto;
-    }
+/* NAVBAR */
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
+  z-index: 10;
+}
 
-    .nav-links a {
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 500;
-    }
+header nav h1 a {
+  font-family: monospace;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  letter-spacing: 0.15em;
+}
 
-    .nav-links a.active {
-      opacity: 0.6;
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0 auto;
+}
 
-    main {
-      position: relative;
-      z-index: 2;
-      padding: 0 2rem 4rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+}
 
-    /* --- UPDATED CSS FOR THE IMAGE BANNER --- */
-    .project-banner {
-      width: 100%;
-      height: 300px; /* Specific height for banner look */
-      object-fit: cover;
-      /* Focus on the plant and window frame */
-      object-position: center 40%;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      display: block;
-      margin-bottom: 3rem;
-    }
-    /* -------------------------------------- */
+.nav-links a.active {
+  opacity: 0.6;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
 
-    section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      color: var(--accent-color);
-      font-family: monospace;
-      letter-spacing: 0.2em;
-      font-weight: 300;
-    }
+/* Banner image */
+.project-banner {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 40%;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  display: block;
+  margin-bottom: 3rem;
+  border-radius: 8px;
+}
 
-    /* global links (non-navbar) */
-    a {
-      color: var(--accent-color);
-      text-decoration: underline;
-    }
+/* Section header */
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--accent-color);
+  font-family: monospace;
+  letter-spacing: 0.2em;
+  font-weight: 300;
+}
 
-    /* PROJECT LIST – MINIMAL */
-    .projects-list {
-      max-width: 650px;
-      margin: 0 auto;
-    }
+/* PROJECT GRID */
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-    .project-item {
-      margin-bottom: 2rem;
-      background: rgba(255,255,255,0.03);
-      padding: 1.5rem;
-      border: 1px solid var(--border-color);
-    }
+.project-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    .project-item a {
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.2rem;
-    }
+.project-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
 
-    .project-item a:hover {
-      opacity: 0.7;
-      text-decoration: underline;
-    }
+.project-item a {
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--accent-color);
+}
 
-    .project-item p {
-      margin: 0.5rem 0 0;
-      color: #ccc;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
+.project-item a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
+.project-item p {
+  margin-top: 0.5rem;
+  color: var(--muted-color);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
 
-    .cursor-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent 60%);
-      pointer-events: none;
-      z-index: 1;
-    }
-  </style>
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Global links */
+a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+</style>
 </head>
+
 <body>
-  <div class="cursor-bg" id="cursor-bg"></div>
+<div class="cursor-bg" id="cursor-bg"></div>
 
 <header>
-  <nav>
-    <h1><a href="about.html">HANNAN</a></h1>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="resume.html">Experience</a></li>
-      <li><a href="blog.html">Blog</a></li>
-    </ul>
-  </nav>
+  <nav>
+    <h1><a href="about.html">HANNAN</a></h1>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="resume.html">Experience</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </nav>
 </header>
 
+<main>
+  <img src="IMG_7719.jpg" alt="View from desk" class="project-banner">
 
-  <main>
-    <img src="IMG_7719.jpg" alt="View from desk" class="project-banner">
+  <section>
+    <h2>PROJECTS</h2>
 
-    <section>
-      <h2>PROJECTS</h2>
+    <div class="projects-list">
+      <div class="project-item">
+        <a href="cip_aud_usd.html">AUD/USD CIP Model</a>
+        <p>Interest parity analysis using spot–forward rates and yield spreads.</p>
+      </div>
 
-      <div class="projects-list">
-        <div class="project-item">
-          <a href="cip_aud_usd.html">AUD/USD CIP Model</a>
-          <p>Interest parity analysis using spot–forward rates and yield spreads.</p>
-        </div>
+      <div class="project-item">
+        <a href="equity_risk.html">Equity Risk Model</a>
+        <p>OLS + Newey–West beta estimation for systematic market sensitivity.</p>
+      </div>
 
-        <div class="project-item">
-          <a href="equity_risk.html">Equity Risk Model</a>
-          <p>OLS + Newey–West beta estimation for systematic market sensitivity.</p>
-        </div>
+      <div class="project-item">
+        <a href="macro_ml_pipeline.html">Macroeconomic &amp; Data Science Pipeline</a>
+        <p>Econometrics + ML forecasting workflow for macro time series.</p>
+      </div>
 
-        <div class="project-item">
-          <a href="macro_ml_pipeline.html">Macroeconomic &amp; Data Science Pipeline</a>
-          <p>Econometrics + ML forecasting workflow for macro time series.</p>
-        </div>
+      <div class="project-item">
+        <a href="geostartup_analytics.html">GeoStartup Analytics</a>
+        <p>Mapping global startup ecosystems using clustering and folium.</p>
+      </div>
 
-        <div class="project-item">
-          <a href="geostartup_analytics.html">GeoStartup Analytics</a>
-          <p>Mapping global startup ecosystems using clustering and folium.</p>
-        </div>
+      <div class="project-item">
+        <a href="global_wellbeing.html">Global Wellbeing Insights</a>
+        <p>Life expectancy, income, and pollution relationships across countries.</p>
+      </div>
+    </div>
+  </section>
+</main>
 
-        <div class="project-item">
-          <a href="global_wellbeing.html">Global Wellbeing Insights</a>
-          <p>Life expectancy, income, and pollution relationships across countries.</p>
-        </div>
-      </div>
-    </section>
-  </main>
+<footer>
+  <p>&copy; 2025 Hannan Nabi</p>
+</footer>
 
-  <footer>
-    <p>&copy; 2025 Hannan Nabi</p>
-  </footer>
-
-  <script>
-    const cursorBg = document.getElementById('cursor-bg');
-    document.addEventListener('mousemove', (e) => {
-      cursorBg.style.background =
-        `radial-gradient(circle at ${e.clientX}px ${e.clientY}px,
-        rgba(255,255,255,0.05), transparent 60%)`;
-    });
-  </script>
+<script>
+const cursorBg = document.getElementById('cursor-bg');
+document.addEventListener('mousemove', (e) => {
+  cursorBg.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px,
+    rgba(255,255,255,0.05), transparent 60%)`;
+});
+</script>
 </body>
 </html>
