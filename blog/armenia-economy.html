@@ -3,141 +3,225 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Macroeconomic Signals and Armenia | Hannan</title>
-<link rel="stylesheet" href="../style.css"/>
+<title>Blog | Hannan</title>
+<link rel="stylesheet" href="style.css"/>
 
 <style>
 :root{
-  --bg-color:#121212;
-  --text-color:#ffffff;
-  --accent-color:#ffffff;
-  --muted-color:#888;
-  --card-bg:#1a1a1a;
-  --border-color:#2a2a2a;
+--bg-color:#121212;
+--text-color:#ffffff;
+--accent-color:#ffffff;
+--muted-color:#888;
+--card-bg:#1a1a1a;
+--border-color:#2a2a2a;
 }
 
 body{
-  margin:0;
-  background:var(--bg-color);
-  color:var(--text-color);
-  font-family:'Segoe UI',sans-serif;
-  overflow-x:hidden;
+margin:0;
+background:var(--bg-color);
+color:var(--text-color);
+font-family:'Segoe UI',sans-serif;
+overflow-x:hidden;
 }
 
 .cursor-bg{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  height:100vh;
-  background:radial-gradient(circle at center, rgba(255,255,255,0.07), transparent 60%);
-  pointer-events:none;
-  z-index:1;
+position:fixed;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+background:radial-gradient(circle at center,rgba(255,255,255,0.07),transparent 60%);
+pointer-events:none;
+z-index:1;
 }
 
 header nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:1rem 2rem;
-  position:relative;
-  z-index:10;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:1rem 2rem;
+position:relative;
+z-index:10;
 }
 
 header nav h1 a{
-  font-family:monospace;
-  font-size:1.2rem;
-  color:var(--accent-color);
-  text-decoration:none;
-  letter-spacing:.15em;
+font-family:monospace;
+font-size:1.2rem;
+color:var(--accent-color);
+text-decoration:none;
+letter-spacing:.15em;
 }
 
 .nav-links{
-  display:flex;
-  gap:2rem;
-  list-style:none;
-  margin:0 auto;
+display:flex;
+gap:2rem;
+list-style:none;
+margin:0 auto;
 }
 
 .nav-links a{
-  color:var(--text-color);
-  text-decoration:none;
-  font-weight:500;
+color:var(--text-color);
+text-decoration:none;
+font-weight:500;
 }
 
 .nav-links a.active{
-  text-decoration:underline;
-  text-underline-offset:4px;
+text-decoration:underline;
+text-underline-offset:4px;
 }
 
 main{
-  padding:3rem 2rem 4rem;
-  max-width:900px;
-  margin:auto;
-  position:relative;
-  z-index:2;
+padding:3rem 2rem 4rem;
+max-width:1200px;
+margin:auto;
+position:relative;
+z-index:2;
 }
 
-article h1, article h2{
-  color:var(--accent-color);
-  font-weight:400;
-  line-height:1.3;
+.blog-header{
+text-align:center;
+margin-bottom:4rem;
+border-bottom:1px solid var(--border-color);
+padding-bottom:2rem;
 }
 
-article p{
-  line-height:1.8;
-  color:var(--muted-color);
-  font-size:1.1rem;
-  margin-bottom:1.5rem;
+.blog-header h1{
+font-family:monospace;
+font-size:2.5rem;
+letter-spacing:.2em;
+font-weight:300;
+margin-bottom: 0.5rem;
+}
+
+.blog-header p{
+color:var(--muted-color);
+margin-bottom: 2rem;
+}
+
+/* --- NEW CSS FOR THE IMAGE --- */
+.blog-banner {
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    display: block; /* Centers the image */
+}
+/* ----------------------------- */
+
+.blog-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(350px,1fr));
+gap:2rem;
+}
+
+.blog-card{
+background:var(--card-bg);
+border:1px solid var(--border-color);
+padding:2rem;
+transition:.3s;
+}
+
+.blog-card:hover{
+transform:translateY(-4px);
+box-shadow:0 8px 24px rgba(0,0,0,.4);
 }
 
 .blog-meta{
-  display:flex;
-  gap:1rem;
-  margin-bottom:1rem;
-  font-size:.85rem;
-  color:var(--muted-color);
+display:flex;
+gap:1rem;
+margin-bottom:1rem;
+font-size:.85rem;
+color:var(--muted-color);
+}
+
+.blog-title a{
+color:var(--accent-color);
+text-decoration:none;
+font-size:1.4rem;
+display:block;
+margin-bottom:1rem;
+}
+
+.blog-excerpt{
+color:var(--muted-color);
+line-height:1.7;
+}
+
+footer{
+text-align:center;
+padding:2rem;
+color:#555;
 }
 </style>
 </head>
 
 <body>
+
 <div class="cursor-bg" id="cursor-bg"></div>
 
 <header>
 <nav>
-<h1><a href="../about.html">HANNAN</a></h1>
+<h1><a href="about.html">HANNAN</a></h1>
 <ul class="nav-links">
-<li><a href="../about.html">About</a></li>
-<li><a href="../projects.html">Projects</a></li>
-<li><a href="../resume.html">Experience</a></li>
-<li><a href="../blog.html" class="active">Blog</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="resume.html">Experience</a></li>
+<li><a href="blog.html" class="active">Blog</a></li>
 </ul>
 </nav>
 </header>
 
 <main>
-<article>
-<div class="blog-meta">
-  <span>2026.02.12</span>
-  <span>Economics</span>
+
+<div class="blog-header">
+<h1>BLOG</h1>
+<p>Thoughts on economics, data science, and technology</p>
+<img src="IMG_8232.jpg" alt="Workspace setup" class="blog-banner">
 </div>
 
-<h1>Macroeconomic Signals and Armenia</h1>
+<div class="blog-grid">
 
-<p>
-Understanding emerging market risk requires parsing subtle signals in fiscal and monetary policy. Armenia, as a small open economy, illustrates how macroeconomic narratives shape investor perception. Data like sovereign bond yields, fiscal balances, and external debt can provide early indicators of market confidence.
+<article class="blog-card">
+<div class="blog-meta">
+<span>2026.02.12</span>
+<span>Data Science</span>
+</div>
+<h2 class="blog-title">
+<a href="blog/bayes-theorem.html">Reading Bayes' Theorem and Tom Chivers</a>
+</h2>
+<p class="blog-excerpt">
+Reflections on probabilistic thinking, Bayesian reasoning, and intellectual humility in inference.
 </p>
-
-<p>
-Policy communication is as important as actual economic fundamentals. Investor reactions often hinge on credibility and consistency of monetary and fiscal authorities. This has implications for borrowing costs, currency stability, and broader capital flows into the country.
-</p>
-
-<p>
-Emerging markets like Armenia also highlight the tension between short-term volatility and long-term structural growth. Risk measures, stress testing, and scenario analysis become indispensable tools for analysts aiming to make informed decisions amidst uncertainty.
-</p>
-
 </article>
+
+<article class="blog-card">
+<div class="blog-meta">
+<span>2026.02.12</span>
+<span>Finance</span>
+</div>
+<h2 class="blog-title">
+<a href="blog/finance-ml.html">Machine Learning in Finance</a>
+</h2>
+<p class="blog-excerpt">
+Exploring the intersection between quantitative finance, predictive modelling, and modern ML methods.
+</p>
+</article>
+
+<article class="blog-card">
+<div class="blog-meta">
+<span>2026.02.12</span>
+<span>Economics</span>
+</div>
+<h2 class="blog-title">
+<a href="blog/armenia-economy.html">Macroeconomic Signals and Armenia</a>
+</h2>
+<p class="blog-excerpt">
+Policy signalling, emerging market risk, and macroeconomic narratives shaping investor perception.
+</p>
+</article>
+
+</div>
 </main>
 
 <footer>
@@ -145,10 +229,11 @@ Emerging markets like Armenia also highlight the tension between short-term vola
 </footer>
 
 <script>
-const cursorBg = document.getElementById('cursor-bg');
-document.addEventListener('mousemove', e => {
-  cursorBg.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(255,255,255,0.07), transparent 60%)`;
+const cursorBg=document.getElementById('cursor-bg');
+document.addEventListener('mousemove',e=>{
+cursorBg.style.background=`radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(255,255,255,0.07), transparent 60%)`;
 });
 </script>
+
 </body>
 </html>
