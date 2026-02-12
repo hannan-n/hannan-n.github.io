@@ -100,16 +100,15 @@ margin-bottom: 2rem;
 
 /* --- UPDATED CSS FOR THE IMAGE --- */
 .blog-banner {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    /* Moves the focus area 100px down from the top edge to show more top content */
-    object-position: 50% 100px;
+    width: 100%; /* Makes it span the container width */
+    height: 250px; /* Adjust this value to make it shorter/taller */
+    ; /* Crops the image to fit the container without stretching */
+    object-position: center; /* Ensures the center of the image is visible */
     
     border: 1px solid var(--border-color);
     box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     display: block;                
-    margin-bottom: 2rem;
+    margin-bottom: 2rem; /* Adds space between image and grid */
 }
 /* ----------------------------- */
 
