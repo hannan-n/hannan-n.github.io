@@ -1,172 +1,164 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Machine Learning in Finance - Hannan</title>
-<link rel="stylesheet" href="style.css">
-
-<style>
-:root {
-  --bg-color:#121212;
-  --text-color:#ffffff;
-  --accent-color:#ffffff;
-}
-
-body{
-  margin:0;
-  padding:0;
-  background-color:var(--bg-color);
-  color:var(--text-color);
-  font-family:'Segoe UI',sans-serif;
-  overflow-x:hidden;
-}
-
-/* NAVBAR */
-header nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:1rem 2rem;
-}
-
-header nav h1 a{
-  font-family:monospace;
-  font-size:1.2rem;
-  color:var(--accent-color);
-  text-decoration:none;
-  letter-spacing:0.15em;
-}
-
-.nav-links{
-  display:flex;
-  gap:2rem;
-  list-style:none;
-  margin:0 auto;
-}
-
-.nav-links a{
-  color:var(--text-color);
-  text-decoration:none;
-  font-weight:500;
-}
-
-.nav-links .active{
-  opacity:0.6;
-}
-
-/* PAGE CONTENT */
-main{
-  max-width:800px;
-  margin:0 auto;
-  padding:2rem;
-  position:relative;
-  z-index:2;
-}
-
-h2{
-  font-size:2rem;
-  text-align:center;
-  margin-bottom:0.5rem;
-}
-
-.meta{
-  text-align:center;
-  color:#888;
-  margin-bottom:2rem;
-}
-
-p{
-  font-size:1.1rem;
-  line-height:1.65;
-  margin-bottom:1.25rem;
-}
-
-a{
-  color:#ffffff;
-  text-decoration:underline;
-}
-
-a:hover{
-  opacity:0.6;
-}
-
-.cursor-bg{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  height:100vh;
-  background:radial-gradient(circle at center, rgba(255,255,255,0.07), transparent 60%);
-  pointer-events:none;
-  z-index:1;
-  transition:background 0.2s ease-out;
-}
-
-footer{
-  text-align:center;
-  padding:2rem;
-  color:#777;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning in Finance - Hannan</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --accent-color: #ffffff;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    /* NAVBAR */
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    header nav h1 a {
+      font-family: monospace;
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      text-decoration: none;
+      letter-spacing: 0.15em;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0 auto;
+    }
+    
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .nav-links .active {
+      opacity: 0.6;
+    }
+    
+    /* PAGE CONTENT */
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    
+    .meta {
+      text-align: center;
+      color: #888;
+      margin-bottom: 2rem;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+    
+    a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    
+    a:hover {
+      opacity: 0.6;
+    }
+    
+    .cursor-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.07), transparent 60%);
+      pointer-events: none;
+      z-index: 1;
+      transition: background 0.2s ease-out;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #777;
+    }
+  </style>
 </head>
-
 <body>
-
-<div class="cursor-bg" id="cursor-bg"></div>
-
-<header>
-<nav>
-<h1><a href="about.html">HANNAN</a></h1>
-<ul class="nav-links">
-<li><a href="about.html">About</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="resume.html">Experience</a></li>
-<li><a href="blog.html" class="active">Blog</a></li>
-</ul>
-</nav>
-</header>
-
-<main>
-
-<h2>Machine Learning in Finance</h2>
-<p class="meta">2026.02.12 · Data Science</p>
-
-<p>
-Machine learning has become embedded in financial analysis, from risk modelling
-to algorithmic trading. Unlike traditional econometric frameworks, modern models
-capture non-linear relationships within complex datasets.
-</p>
-
-<p>
-Gradient boosting, neural networks, and ensemble models increasingly drive
-forecasting systems. However, model interpretability remains essential —
-financial institutions must balance predictive accuracy with transparency.
-</p>
-
-<p>
-Human judgement continues to matter. Market regimes shift, structural breaks occur,
-and historical data may mislead purely statistical systems.
-The most effective practitioners treat machine learning as an augmentation tool,
-not a replacement for economic reasoning.
-</p>
-
-</main>
-
-<footer>
-<p>&copy; 2025 Hannan Nabi</p>
-</footer>
-
-<script>
-const cursorBg=document.getElementById('cursor-bg');
-document.addEventListener('mousemove',(e)=>{
-cursorBg.style.background=
-`radial-gradient(circle at ${e.clientX}px ${e.clientY}px,
-rgba(255,255,255,0.07), transparent 60%)`;
-});
-</script>
-
+  <div class="cursor-bg" id="cursor-bg"></div>
+  
+  <header>
+    <nav>
+      <h1><a href="about.html">HANNAN</a></h1>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Experience</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <h2>Machine Learning in Finance</h2>
+    <p class="meta">2026.02.12 · Data Science</p>
+    
+    <p>
+      Machine learning has become embedded in financial analysis, from risk modelling
+      to algorithmic trading. Unlike traditional econometric frameworks, modern models
+      capture non-linear relationships within complex datasets.
+    </p>
+    
+    <p>
+      Gradient boosting, neural networks, and ensemble models increasingly drive
+      forecasting systems. However, model interpretability remains essential —
+      financial institutions must balance predictive accuracy with transparency.
+    </p>
+    
+    <p>
+      Human judgement continues to matter. Market regimes shift, structural breaks occur,
+      and historical data may mislead purely statistical systems.
+      The most effective practitioners treat machine learning as an augmentation tool,
+      not a replacement for economic reasoning.
+    </p>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 Hannan Nabi</p>
+  </footer>
+  
+  <script>
+    const cursorBg = document.getElementById('cursor-bg');
+    document.addEventListener('mousemove', (e) => {
+      cursorBg.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(255,255,255,0.07), transparent 60%)`;
+    });
+  </script>
 </body>
 </html>
-
