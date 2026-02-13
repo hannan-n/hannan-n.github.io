@@ -137,6 +137,7 @@
     .blog-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, .4);
+      cursor: pointer;
     }
 
     .blog-meta {
@@ -237,20 +238,23 @@
         </p>
       </article>
 
-      <article class="blog-card">
-        <img src="thumbnail.png" alt="strumming">
-        
-        <div class="blog-meta">
-          <span>2026.02.13</span>
-          <span>Music</span>
-        </div>
-        <h2 class="blog-title">
-          <a href="blog/covetcover.html">Strumming some Covet</a>
-        </h2>
-        <p class="blog-excerpt">
-          Quick snippet from Shibuya.
-        </p>
-      </article>
+      <!-- Covet snippet: entire card links directly to video -->
+      <a href="https://hannan-n.github.io/hannan-n.github.io/Untitled.mp4" target="_blank" style="text-decoration:none;">
+        <article class="blog-card">
+          <img src="thumbnail.png" alt="strumming">
+          
+          <div class="blog-meta">
+            <span>2026.02.13</span>
+            <span>Music</span>
+          </div>
+          <h2 class="blog-title">
+            <span style="color:var(--accent-color); font-size:1.4rem; display:block; margin-bottom:1rem;">Strumming some Covet</span>
+          </h2>
+          <p class="blog-excerpt">
+            Quick snippet from Shibuya.
+          </p>
+        </article>
+      </a>
 
     </div>
   </main>
