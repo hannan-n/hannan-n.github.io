@@ -126,6 +126,16 @@ border:1px solid var(--border-color);
 padding:2rem;
 transition:.3s;
 }
+  
+.blog-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+border:1px solid var(--border-color);
+margin-bottom:1.2rem;
+border-radius:6px;
+display:block;
+}
 
 .blog-card:hover{
 transform:translateY(-4px);
@@ -188,17 +198,22 @@ color:#555;
 <div class="blog-grid">
 
 <article class="blog-card">
+<img src="IMG_8353.jpeg" alt="Bayes in AI book page">
+
 <div class="blog-meta">
 <span>2026.02.12</span>
 <span>Data Science</span>
 </div>
+
 <h2 class="blog-title">
 <a href="blog/bayes-theorem.html">Reading Bayes' Theorem and Tom Chivers</a>
 </h2>
+
 <p class="blog-excerpt">
 Reflections on probabilistic thinking, Bayesian reasoning, and intellectual humility in inference.
 </p>
 </article>
+
 
 <article class="blog-card">
 <div class="blog-meta">
