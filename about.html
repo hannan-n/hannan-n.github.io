@@ -56,67 +56,103 @@
       z-index: 2;
       padding: 2rem;
     }
-    .avatar-card{
-  display:flex;
-  align-items:center;
-  gap:1.5rem;
-  max-width:650px;
-  margin:2rem auto;
-  padding:1.5rem;
-  border:1px solid #222;
-  border-radius:14px;
-  transition:all 0.3s ease;
-}
 
-.avatar-card:hover{
-  border-color:#555;
-  transform:translateY(-3px);
-}
+    /* Sketch container centered - no frame, blends into page */
+    .avatar-sketch {
+      width: 320px;
+      height: 320px;
+      margin: 2rem auto 1.5rem;
+      position: relative;
+      filter: drop-shadow(0 0 30px rgba(255,255,255,0.05));
+    }
 
-.avatar-circle{
-  width:80px;
-  height:80px;
-  border-radius:50%;
-  background:radial-gradient(circle,#fff2,transparent 70%);
-  position:relative;
-}
+    .avatar-sketch svg {
+      width: 100%;
+      height: 100%;
+    }
 
-.avatar-circle::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:50%;
-  border:1px solid #444;
-}
+    /* Info below sketch */
+    .avatar-info {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 2rem;
+    }
 
-.avatar-info h3{
-  margin:0;
-  font-size:1.1rem;
-}
+    .avatar-info h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.5rem;
+      color: var(--accent-color);
+    }
 
-.avatar-role{
-  margin:0.3rem 0;
-  color:#bbb;
-}
+    .avatar-role {
+      margin: 0;
+      color: #bbb;
+      font-size: 1.05rem;
+    }
 
-.avatar-extra{
-  font-size:0.85rem;
-  color:#777;
-  opacity:0;
-  transition:opacity 0.3s ease;
-}
+    .ink-line {
+      fill: none;
+      stroke: #ffffff;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
 
-.avatar-card:hover .avatar-extra{
-  opacity:1;
-}
+    .hatch {
+      stroke-width: 0.4;
+      opacity: 0.4;
+    }
 
-.about-text {
-  max-width: 650px;    /* keeps lines readable and tight */
-  margin: 0 auto;      /* centers the block */
-  line-height: 1.6;     /* improves readability */
-  font-size: 1.05rem;   /* clean professional size */
-  text-align: left;     /* prevents awkward justified stretching */
-}
+    .outline {
+      stroke-width: 1;
+    }
+
+    .thick {
+      stroke-width: 1.5;
+    }
+
+    .pupil {
+      transition: cx 0.12s ease-out, cy 0.12s ease-out;
+    }
+
+    .white-highlight {
+      fill: #ffffff;
+      opacity: 0.9;
+    }
+
+    .shadow {
+      fill: #ffffff;
+      opacity: 0.05;
+    }
+    
+    .guitar-fill {
+      fill: #888;
+      opacity: 0.3;
+    }
+    
+    .guitar-hole {
+      fill: #000;
+    }
+
+
+    .avatar-info h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.5rem;
+      color: var(--accent-color);
+    }
+
+    .avatar-role {
+      margin: 0;
+      color: #bbb;
+      font-size: 1.05rem;
+    }
+
+    .about-text {
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+      font-size: 1.05rem;
+      text-align: left;
+    }
 
     section {
       max-width: 800px;
@@ -155,95 +191,273 @@
 </head>
 <body>
   <div class="cursor-bg" id="cursor-bg"></div>
-<header>
-  <nav>
-    <h1><a href="about.html">HANNAN</a></h1>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="resume.html">Experience</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <nav>
+      <h1><a href="about.html">HANNAN</a></h1>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Experience</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
     <section>
       <h2>About Me</h2>
-<div class="avatar-card">
-  <div class="avatar-circle"></div>
-  <div class="avatar-info">
-    <h3>Hannan Nabi</h3>
-    <p class="avatar-role">Quantitative Finance · Risk · Data Science</p>
-    <p class="avatar-extra">Hover to learn more</p>
-  </div>
-</div>
-
-<div class="about-text">
-</main>
-
-<div style="
-  max-width: 650px;
-  margin: 0 auto;            /* centers the block */
-  text-align: center;        /* centers the text inside */
-">
-
-  <p style="
-    font-size: 1.15rem;
-    line-height: 1.8;
-    margin-top: 1.5rem;
-  ">
-    I work at the intersection of finance, risk, and data. My focus is on building
-    quantitative models that explain how markets behave under uncertainty from
-    simulation-based risk measures to macro-financial structures and trading
-    frameworks.
-  </p>
-
-  <p style="
-    font-size: 1.15rem;
-    line-height: 1.8;
-    margin-top: 1rem;
-  ">
-    I enjoy translating complex statistical ideas into clear insights and practical
-    tools that improve decision-making. My work blends research depth with a
-    hands-on approach to modelling, analysis, and execution.
-  </p>
-
-</div>
-
       
+      <div class="avatar-sketch">
+        <svg viewBox="0 0 400 550" xmlns="http://www.w3.org/2000/svg">
+          <!-- Transparent background -->
+          <rect x="0" y="0" width="400" height="550" fill="transparent"/>
+          
+          <!-- Hair - detailed cross-hatching -->
+          <g id="hair">
+            <path class="ink-line thick" d="M 110 100 Q 90 60, 120 45 Q 150 30, 200 28 Q 250 30, 280 45 Q 310 60, 290 100"/>
+            <path class="ink-line hatch" d="M 130 95 Q 125 70, 130 50"/>
+            <path class="ink-line hatch" d="M 140 95 Q 138 65, 145 45"/>
+            <path class="ink-line hatch" d="M 150 95 Q 150 70, 155 48"/>
+            <path class="ink-line hatch" d="M 160 95 Q 160 65, 165 45"/>
+            <path class="ink-line hatch" d="M 170 98 Q 172 68, 175 50"/>
+            <path class="ink-line hatch" d="M 180 100 Q 183 70, 185 48"/>
+            <path class="ink-line hatch" d="M 190 100 Q 192 72, 195 50"/>
+            <path class="ink-line hatch" d="M 210 100 Q 208 72, 205 50"/>
+            <path class="ink-line hatch" d="M 220 100 Q 217 70, 215 48"/>
+            <path class="ink-line hatch" d="M 230 98 Q 228 68, 225 50"/>
+            <path class="ink-line hatch" d="M 240 95 Q 240 65, 235 45"/>
+            <path class="ink-line hatch" d="M 250 95 Q 250 70, 245 48"/>
+            <path class="ink-line hatch" d="M 260 95 Q 262 65, 255 45"/>
+            <path class="ink-line hatch" d="M 270 95 Q 275 70, 270 50"/>
+            <path class="ink-line hatch" d="M 115 85 Q 120 80, 125 85"/>
+            <path class="ink-line hatch" d="M 135 75 Q 140 70, 145 75"/>
+            <path class="ink-line hatch" d="M 255 75 Q 260 70, 265 75"/>
+            <path class="ink-line hatch" d="M 275 85 Q 280 80, 285 85"/>
+          </g>
+          
+          <!-- Face outline -->
+          <ellipse class="ink-line outline" cx="200" cy="165" rx="85" ry="105" fill="none"/>
+          
+          <!-- Shadow on side of face -->
+          <ellipse class="shadow" cx="135" cy="165" rx="20" ry="70"/>
+          
+          <!-- Ear (left) -->
+          <path class="ink-line outline" d="M 115 155 Q 108 155, 107 165 Q 107 175, 115 175"/>
+          <path class="ink-line hatch" d="M 112 160 Q 110 165, 112 170"/>
+          
+          <!-- Glasses frame -->
+          <ellipse class="ink-line outline" cx="160" cy="150" rx="32" ry="28" fill="none"/>
+          <ellipse class="ink-line outline" cx="240" cy="150" rx="32" ry="28" fill="none"/>
+          <path class="ink-line outline" d="M 192 150 L 208 150"/>
+          <path class="ink-line outline" d="M 128 150 L 115 148"/>
+          <path class="ink-line outline" d="M 272 150 L 285 148"/>
+          
+          <!-- Eyes -->
+          <g id="left-eye">
+            <ellipse cx="160" cy="150" rx="16" ry="14" fill="#1a1a1a"/>
+            <circle cx="160" cy="150" r="10" fill="#666"/>
+            <circle class="pupil" id="left-pupil" cx="160" cy="150" r="5" fill="#ffffff"/>
+            <circle cx="163" cy="147" r="2" fill="#ffffff" opacity="0.6"/>
+            <path class="ink-line hatch" d="M 144 145 Q 160 143, 176 145"/>
+          </g>
+          
+          <g id="right-eye">
+            <ellipse cx="240" cy="150" rx="16" ry="14" fill="#1a1a1a"/>
+            <circle cx="240" cy="150" r="10" fill="#666"/>
+            <circle class="pupil" id="right-pupil" cx="240" cy="150" r="5" fill="#ffffff"/>
+            <circle cx="243" cy="147" r="2" fill="#ffffff" opacity="0.6"/>
+            <path class="ink-line hatch" d="M 224 145 Q 240 143, 256 145"/>
+          </g>
+          
+          <!-- Eyebrows -->
+          <path class="ink-line outline" d="M 140 130 Q 160 126, 178 128"/>
+          <path class="ink-line hatch" d="M 143 132 Q 160 129, 175 131"/>
+          <path class="ink-line outline" d="M 222 128 Q 240 126, 260 130"/>
+          <path class="ink-line hatch" d="M 225 131 Q 240 129, 257 132"/>
+          
+          <!-- Nose -->
+          <path class="ink-line outline" d="M 200 150 L 200 185"/>
+          <path class="ink-line outline" d="M 200 185 Q 202 190, 208 190"/>
+          <path class="ink-line hatch" d="M 192 178 Q 195 182, 200 181"/>
+          <ellipse class="ink-line hatch" cx="190" cy="186" rx="4" ry="6"/>
+          <ellipse class="ink-line hatch" cx="205" cy="188" rx="3" ry="5"/>
+          
+          <!-- Mouth -->
+          <path class="ink-line outline" d="M 175 215 Q 200 218, 225 215"/>
+          <path class="ink-line hatch" d="M 178 216 Q 200 219, 222 216"/>
+          
+          <!-- Neck -->
+          <path class="ink-line outline" d="M 170 265 L 170 310"/>
+          <path class="ink-line outline" d="M 230 265 L 230 310"/>
+          <path class="ink-line hatch" d="M 175 270 L 175 305"/>
+          <path class="ink-line hatch" d="M 178 272 L 178 305"/>
+          
+          <!-- Collar -->
+          <path class="ink-line outline" d="M 170 310 L 155 320 L 150 340"/>
+          <path class="ink-line outline" d="M 230 310 L 245 320 L 250 340"/>
+          <path class="ink-line outline" d="M 185 318 Q 200 322, 215 318"/>
+          
+          <!-- Shoulders -->
+          <path class="ink-line outline" d="M 150 340 Q 120 355, 100 375"/>
+          <path class="ink-line outline" d="M 250 340 Q 280 355, 300 375"/>
+          
+          <!-- Shirt texture -->
+          <path class="ink-line hatch" d="M 155 345 L 158 350 L 155 355 L 158 360"/>
+          <path class="ink-line hatch" d="M 165 345 L 168 350 L 165 355 L 168 360"/>
+          <path class="ink-line hatch" d="M 225 345 L 222 350 L 225 355 L 222 360"/>
+          <path class="ink-line hatch" d="M 235 345 L 232 350 L 235 355 L 232 360"/>
+          
+          <!-- Guitar neck -->
+          <rect class="ink-line outline" x="240" y="340" width="16" height="140" rx="3" fill="none"/>
+          <line class="ink-line hatch" x1="243" y1="342" x2="243" y2="478"/>
+          <line class="ink-line hatch" x1="246" y1="342" x2="246" y2="478"/>
+          <line class="ink-line hatch" x1="249" y1="342" x2="249" y2="478"/>
+          
+          <!-- Frets -->
+          <line class="ink-line outline" x1="240" y1="360" x2="256" y2="360"/>
+          <line class="ink-line outline" x1="240" y1="385" x2="256" y2="385"/>
+          <line class="ink-line outline" x1="240" y1="410" x2="256" y2="410"/>
+          <line class="ink-line outline" x1="240" y1="435" x2="256" y2="435"/>
+          
+          <!-- Strings -->
+          <line class="ink-line hatch" x1="244" y1="342" x2="244" y2="480" stroke-width="0.4"/>
+          <line class="ink-line hatch" x1="248" y1="342" x2="248" y2="480" stroke-width="0.4"/>
+          <line class="ink-line hatch" x1="252" y1="342" x2="252" y2="480" stroke-width="0.4"/>
+          
+          <!-- Guitar body -->
+          <ellipse class="ink-line outline" cx="285" cy="440" rx="50" ry="68" fill="none"/>
+          <circle cx="285" cy="440" r="22" fill="#2a2a2a"/>
+          <circle class="ink-line hatch" cx="285" cy="440" r="20" fill="none"/>
+          
+          <!-- Body shading -->
+          <path class="ink-line hatch" d="M 255 420 Q 260 440, 255 460"/>
+          <path class="ink-line hatch" d="M 258 418 Q 263 440, 258 462"/>
+          <path class="ink-line hatch" d="M 310 418 Q 307 440, 310 462"/>
+          
+          <!-- Hand on neck -->
+          <ellipse class="ink-line outline" cx="248" cy="380" rx="12" ry="16" fill="none"/>
+          <path class="ink-line hatch" d="M 242 375 Q 245 380, 242 385"/>
+          <ellipse class="ink-line outline" cx="243" cy="368" rx="3" ry="8" fill="none"/>
+          <ellipse class="ink-line outline" cx="253" cy="368" rx="3" ry="8" fill="none"/>
+          
+          <!-- Arm to guitar -->
+          <path class="ink-line outline" d="M 230 320 Q 245 350, 255 400"/>
+          <path class="ink-line hatch" d="M 232 325 Q 243 355, 253 400"/>
+          
+          <!-- Hand strumming -->
+          <path class="ink-line outline" d="M 250 455 Q 252 453, 255 455 Q 258 457, 261 455 Q 264 453, 267 455"/>
+          <path class="ink-line hatch" d="M 252 458 L 252 462"/>
+          <path class="ink-line hatch" d="M 256 460 L 256 464"/>
+          
+          <!-- Arm from shoulder -->
+          <path class="ink-line outline" d="M 100 375 Q 140 400, 200 445"/>
+          <path class="ink-line hatch" d="M 102 378 Q 142 403, 202 447"/>
+        </svg>
+      </div>
+
+      <div class="avatar-info">
+        <h3>Hannan Nabi</h3>
+        <p class="avatar-role">Quantitative Finance · Risk · Data Science</p>
+      </div>
+
+      <div style="max-width: 650px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.15rem; line-height: 1.8; margin-top: 1.5rem;">
+          I work at the intersection of finance, risk, and data. My focus is on building
+          quantitative models that explain how markets behave under uncertainty from
+          simulation-based risk measures to macro-financial structures and trading
+          frameworks.
+        </p>
+
+        <p style="font-size: 1.15rem; line-height: 1.8; margin-top: 1rem;">
+          I enjoy translating complex statistical ideas into clear insights and practical
+          tools that improve decision-making. My work blends research depth with a
+          hands-on approach to modelling, analysis, and execution.
+        </p>
+      </div>
     </section>
   </main>
-  <footer>
-<div style="text-align:center; margin-bottom:0.5rem;">
-  <a href="https://github.com/Hannn1221" target="_blank" style="text-decoration:none;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="#ccc">
-      <path fill-rule="evenodd"
-        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 
-        2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 
-        0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94 
-        -.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53 
-        .63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66 
-        .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 
-        0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 
-        0 0 .67-.21 2.2.82A7.65 7.65 0 018 3.58 
-        c.68.003 1.37.09 2.01.27 1.53-1.04 2.2-.82 2.2-.82 
-        .44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 
-        0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 
-        0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 
-        8.013 0 0016 8c0-4.42-3.58-8-8-8z">
-      </path>
-    </svg>
-  </a>
-</div>
 
-    
+  <footer>
+    <div style="text-align:center; margin-bottom:0.5rem;">
+      <a href="https://github.com/Hannn1221" target="_blank" style="text-decoration:none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 16 16" fill="#ccc">
+          <path fill-rule="evenodd"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 
+            2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94 
+            -.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53 
+            .63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66 
+            .07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 
+            0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 
+            0 0 .67-.21 2.2.82A7.65 7.65 0 018 3.58 
+            c.68.003 1.37.09 2.01.27 1.53-1.04 2.2-.82 2.2-.82 
+            .44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 
+            0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 
+            0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 
+            8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+          </path>
+        </svg>
+      </a>
+    </div>
     <p>&copy; 2025 Hannan Nabi</p>
   </footer>
+
   <script>
+    // Cursor background effect
     const cursorBg = document.getElementById('cursor-bg');
     document.addEventListener('mousemove', (e) => {
       cursorBg.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(255,255,255,0.07), transparent 60%)`;
+    });
+
+    // Eye tracking functionality - runs after DOM is loaded
+    window.addEventListener('DOMContentLoaded', () => {
+      const leftPupil = document.getElementById('left-pupil');
+      const rightPupil = document.getElementById('right-pupil');
+      
+      console.log('Left pupil:', leftPupil);
+      console.log('Right pupil:', rightPupil);
+      
+      if (leftPupil && rightPupil) {
+        const leftEyeCenter = { x: 160, y: 150 };
+        const rightEyeCenter = { x: 240, y: 150 };
+        const maxDistance = 6; // Increased for more visible movement
+        
+        document.addEventListener('mousemove', (e) => {
+          const avatarSketch = document.querySelector('.avatar-sketch');
+          if (!avatarSketch) return;
+          
+          const svg = avatarSketch.querySelector('svg');
+          if (!svg) return;
+          
+          const rect = svg.getBoundingClientRect();
+          
+          // Get mouse position relative to SVG viewBox
+          const mouseX = ((e.clientX - rect.left) / rect.width) * 400;
+          const mouseY = ((e.clientY - rect.top) / rect.height) * 550;
+          
+          // Calculate left pupil position
+          const leftAngle = Math.atan2(mouseY - leftEyeCenter.y, mouseX - leftEyeCenter.x);
+          const leftDistance = Math.min(maxDistance, Math.hypot(mouseX - leftEyeCenter.x, mouseY - leftEyeCenter.y) / 20);
+          const leftPupilX = leftEyeCenter.x + Math.cos(leftAngle) * leftDistance;
+          const leftPupilY = leftEyeCenter.y + Math.sin(leftAngle) * leftDistance;
+          
+          // Calculate right pupil position
+          const rightAngle = Math.atan2(mouseY - rightEyeCenter.y, mouseX - rightEyeCenter.x);
+          const rightDistance = Math.min(maxDistance, Math.hypot(mouseX - rightEyeCenter.x, mouseY - rightEyeCenter.y) / 20);
+          const rightPupilX = rightEyeCenter.x + Math.cos(rightAngle) * rightDistance;
+          const rightPupilY = rightEyeCenter.y + Math.sin(rightAngle) * rightDistance;
+          
+          // Update pupil positions
+          leftPupil.setAttribute('cx', leftPupilX);
+          leftPupil.setAttribute('cy', leftPupilY);
+          rightPupil.setAttribute('cx', rightPupilX);
+          rightPupil.setAttribute('cy', rightPupilY);
+        });
+        
+        console.log('Eye tracking initialized successfully!');
+      } else {
+        console.error('Pupils not found!');
+      }
     });
   </script>
 </body>
