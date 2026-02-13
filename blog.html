@@ -1,261 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Blog | Hannan</title>
-<link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | Hannan</title>
+  <link rel="stylesheet" href="style.css"/>
 
-<style>
-:root{
---bg-color:#121212;
---text-color:#ffffff;
---accent-color:#ffffff;
---muted-color:#888;
---card-bg:#1a1a1a;
---border-color:#2a2a2a;
-}
+  <style>
+    :root {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --accent-color: #ffffff;
+      --muted-color: #888;
+      --card-bg: #1a1a1a;
+      --border-color: #2a2a2a;
+    }
 
-body{
-margin:0;
-background:var(--bg-color);
-color:var(--text-color);
-font-family:'Segoe UI',sans-serif;
-overflow-x:hidden;
-}
+    body {
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+    }
 
-.cursor-bg{
-position:fixed;
-top:0;
-left:0;
-width:100vw;
-height:100vh;
-background:radial-gradient(circle at center,rgba(255,255,255,0.07),transparent 60%);
-pointer-events:none;
-z-index:1;
-}
+    .cursor-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.07), transparent 60%);
+      pointer-events: none;
+      z-index: 1;
+    }
 
-header nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:1rem 2rem;
-position:relative;
-z-index:10;
-}
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: relative;
+      z-index: 10;
+    }
 
-header nav h1 a{
-font-family:monospace;
-font-size:1.2rem;
-color:var(--accent-color);
-text-decoration:none;
-letter-spacing:.15em;
-}
+    header nav h1 a {
+      font-family: monospace;
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      text-decoration: none;
+      letter-spacing: .15em;
+    }
 
-.nav-links{
-display:flex;
-gap:2rem;
-list-style:none;
-margin:0 auto;
-}
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0 auto;
+    }
 
-.nav-links a{
-color:var(--text-color);
-text-decoration:none;
-font-weight:500;
-}
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-.nav-links a.active{
-text-decoration:underline;
-text-underline-offset:4px;
-}
+    .nav-links a.active {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
 
-main{
-padding:3rem 2rem 4rem;
-max-width:1200px;
-margin:auto;
-position:relative;
-z-index:2;
-}
+    main {
+      padding: 3rem 2rem 4rem;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
 
-.blog-header{
-text-align:center;
-margin-bottom:4rem;
-border-bottom:1px solid var(--border-color);
-padding-bottom:2rem;
-}
+    .blog-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 2rem;
+    }
 
-.blog-header h1{
-font-family:monospace;
-font-size:2.5rem;
-letter-spacing:.2em;
-font-weight:300;
-margin-bottom: 0.5rem;
-}
+    .blog-header h1 {
+      font-family: monospace;
+      font-size: 2.5rem;
+      letter-spacing: .2em;
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+    }
 
-.blog-header p{
-color:var(--muted-color);
-margin-bottom: 2rem;
-}
+    .blog-header p {
+      color: var(--muted-color);
+      margin-bottom: 2rem;
+    }
 
-/* --- UPDATED CSS FOR THE IMAGE --- */
-.blog-banner {
-  width: 100%;
-  height: 380px;              /* slightly taller to keep frame + subject */
-  object-fit: cover;
-  object-position: center 20%; /* keeps lower visual focus */
-  border: 1px solid var(--border-color);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  display: block;
-  margin-bottom: 3rem;
-  border-radius: 8px;
-}
+    .blog-banner {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      object-position: center 20%;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      display: block;
+      margin-bottom: 3rem;
+      border-radius: 8px;
+    }
 
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
 
-/* ----------------------------- */
+    .blog-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 2rem;
+      transition: .3s;
+    }
+      
+    .blog-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      object-position: center 85%;
+      border: 1px solid var(--border-color);
+      margin-bottom: 1.2rem;
+      border-radius: 6px;
+      display: block;
+    }
 
-.blog-grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(350px,1fr));
-gap:2rem;
-}
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .4);
+    }
 
-.blog-card{
-background:var(--card-bg);
-border:1px solid var(--border-color);
-padding:2rem;
-transition:.3s;
-}
-  
-.blog-card img{
-width:100%;
-height:260px;          /* creates crop window */
-object-fit:cover;      /* enables cropping */
-object-position:center 85%;  /* shifts focus downward */
-border:1px solid var(--border-color);
-margin-bottom:1.2rem;
-border-radius:6px;
-display:block;
-}
+    .blog-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: .85rem;
+      color: var(--muted-color);
+    }
 
+    .blog-title a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-size: 1.4rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
 
-.blog-card:hover{
-transform:translateY(-4px);
-box-shadow:0 8px 24px rgba(0,0,0,.4);
-}
+    .blog-excerpt {
+      color: var(--muted-color);
+      line-height: 1.7;
+    }
 
-.blog-meta{
-display:flex;
-gap:1rem;
-margin-bottom:1rem;
-font-size:.85rem;
-color:var(--muted-color);
-}
-
-.blog-title a{
-color:var(--accent-color);
-text-decoration:none;
-font-size:1.4rem;
-display:block;
-margin-bottom:1rem;
-}
-
-.blog-excerpt{
-color:var(--muted-color);
-line-height:1.7;
-}
-
-footer{
-text-align:center;
-padding:2rem;
-color:#555;
-}
-</style>
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #555;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="cursor-bg" id="cursor-bg"></div>
+  <div class="cursor-bg" id="cursor-bg"></div>
 
-<header>
-<nav>
-<h1><a href="about.html">HANNAN</a></h1>
-<ul class="nav-links">
-<li><a href="about.html">About</a></li>
-<li><a href="projects.html">Projects</a></li>
-<li><a href="resume.html">Experience</a></li>
-<li><a href="blog.html" class="active">Blog</a></li>
-</ul>
-</nav>
-</header>
+  <header>
+    <nav>
+      <h1><a href="about.html">HANNAN</a></h1>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Experience</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main>
+  <main>
 
-<div class="blog-header">
-<h1>BLOG</h1>
-<p>Thoughts on economics, data science, and technology</p>
-<img src="IMG_8342 2.jpeg" alt="Workspace setup" class="blog-banner">
-</div>
+    <div class="blog-header">
+      <h1>BLOG</h1>
+      <p>Thoughts on economics, data science, technology, and music</p>
+      <img src="IMG_8342 2.jpeg" alt="Workspace setup" class="blog-banner">
+    </div>
 
-<div class="blog-grid">
+    <div class="blog-grid">
 
-<article class="blog-card">
-<img src="IMG_8353.jpeg" alt="Bayes in AI book page">
+      <article class="blog-card">
+        <img src="IMG_8353.jpeg" alt="Bayes in AI book page">
 
-<div class="blog-meta">
-<span>2026.02.12</span>
-<span>Data Science</span>
-</div>
+        <div class="blog-meta">
+          <span>2026.02.12</span>
+          <span>Data Science</span>
+        </div>
 
-<h2 class="blog-title">
-<a href="blog/bayes-theorem.html">Reading Bayes' Theorem and Tom Chivers</a>
-</h2>
+        <h2 class="blog-title">
+          <a href="blog/bayes-theorem.html">Reading Bayes' Theorem and Tom Chivers</a>
+        </h2>
 
-<p class="blog-excerpt">
-Reflections on probabilistic thinking, Bayesian reasoning, and intellectual humility in inference.
-</p>
-</article>
+        <p class="blog-excerpt">
+          Reflections on probabilistic thinking, Bayesian reasoning, and intellectual humility in inference.
+        </p>
+      </article>
 
+      <article class="blog-card">
+        <div class="blog-meta">
+          <span>2026.02.12</span>
+          <span>Finance</span>
+        </div>
+        <h2 class="blog-title">
+          <a href="blog/finance-ml.html">Machine Learning in Finance</a>
+        </h2>
+        <p class="blog-excerpt">
+          Exploring the intersection between quantitative finance, predictive modelling, and modern ML methods.
+        </p>
+      </article>
 
-<article class="blog-card">
-<div class="blog-meta">
-<span>2026.02.12</span>
-<span>Finance</span>
-</div>
-<h2 class="blog-title">
-<a href="blog/finance-ml.html">Machine Learning in Finance</a>
-</h2>
-<p class="blog-excerpt">
-Exploring the intersection between quantitative finance, predictive modelling, and modern ML methods.
-</p>
-</article>
+      <article class="blog-card">
+        <div class="blog-meta">
+          <span>2026.02.12</span>
+          <span>Economics</span>
+        </div>
+        <h2 class="blog-title">
+          <a href="blog/armenia-economy.html">Macroeconomic Signals and Armenia</a>
+        </h2>
+        <p class="blog-excerpt">
+          Policy signalling, emerging market risk, and macroeconomic narratives shaping investor perception.
+        </p>
+      </article>
 
-<article class="blog-card">
-<div class="blog-meta">
-<span>2026.02.12</span>
-<span>Economics</span>
-</div>
-<h2 class="blog-title">
-<a href="blog/armenia-economy.html">Macroeconomic Signals and Armenia</a>
-</h2>
-<p class="blog-excerpt">
-Policy signalling, emerging market risk, and macroeconomic narratives shaping investor perception.
-</p>
-</article>
+      <article class="blog-card">
+        <img src="thumbnail.png" alt="strumming">
+        
+        <div class="blog-meta">
+          <span>2026.02.13</span>
+          <span>Music</span>
+        </div>
+        <h2 class="blog-title">
+          <a href="blog/covet-cover.html">Strumming some Covet</a>
+        </h2>
+        <p class="blog-excerpt">
+          Quick snippet from Shibuya.
+        </p>
+      </article>
 
-</div>
-</main>
+    </div>
+  </main>
 
-<footer>
-<p>© 2025 Hannan Nabi</p>
-</footer>
+  <footer>
+    <p>© 2025 Hannan Nabi</p>
+  </footer>
 
-<script>
-const cursorBg=document.getElementById('cursor-bg');
-document.addEventListener('mousemove',e=>{
-cursorBg.style.background=`radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(255,255,255,0.07), transparent 60%)`;
-});
-</script>
+  <script>
+    const cursorBg = document.getElementById('cursor-bg');
+    document.addEventListener('mousemove', e => {
+      cursorBg.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(255,255,255,0.07), transparent 60%)`;
+    });
+  </script>
 
 </body>
 </html>
