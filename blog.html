@@ -129,14 +129,15 @@ transition:.3s;
   
 .blog-card img{
 width:100%;
-height:auto;
-object-fit:center 85%;;
+height:260px;          /* creates crop window */
+object-fit:cover;      /* enables cropping */
+object-position:center 85%;  /* shifts focus downward */
 border:1px solid var(--border-color);
 margin-bottom:1.2rem;
 border-radius:6px;
 display:block;
-background:#000;
 }
+
 
 .blog-card:hover{
 transform:translateY(-4px);
