@@ -56,7 +56,60 @@
       z-index: 2;
       padding: 2rem;
     }
-    
+    .avatar-card{
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+  max-width:650px;
+  margin:2rem auto;
+  padding:1.5rem;
+  border:1px solid #222;
+  border-radius:14px;
+  transition:all 0.3s ease;
+}
+
+.avatar-card:hover{
+  border-color:#555;
+  transform:translateY(-3px);
+}
+
+.avatar-circle{
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  background:radial-gradient(circle,#fff2,transparent 70%);
+  position:relative;
+}
+
+.avatar-circle::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  border:1px solid #444;
+}
+
+.avatar-info h3{
+  margin:0;
+  font-size:1.1rem;
+}
+
+.avatar-role{
+  margin:0.3rem 0;
+  color:#bbb;
+}
+
+.avatar-extra{
+  font-size:0.85rem;
+  color:#777;
+  opacity:0;
+  transition:opacity 0.3s ease;
+}
+
+.avatar-card:hover .avatar-extra{
+  opacity:1;
+}
+
 .about-text {
   max-width: 650px;    /* keeps lines readable and tight */
   margin: 0 auto;      /* centers the block */
@@ -117,6 +170,14 @@
   <main>
     <section>
       <h2>About Me</h2>
+<div class="avatar-card">
+  <div class="avatar-circle"></div>
+  <div class="avatar-info">
+    <h3>Hannan Nabi</h3>
+    <p class="avatar-role">Quantitative Finance · Risk · Data Science</p>
+    <p class="avatar-extra">Hover to learn more</p>
+  </div>
+</div>
 
 <div class="about-text">
 </main>
