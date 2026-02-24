@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merlin Properties Stock Pitch - Hannan</title>
+<link rel="stylesheet" href="style.css">
+<style>
+:root {
+  --bg-color:#121212;
+  --text-color:#ffffff;
+  --accent-color:#ffffff;
+}
+body{
+  margin:0;
+  padding:0;
+  background-color:var(--bg-color);
+  color:var(--text-color);
+  font-family:'Segoe UI',sans-serif;
+  overflow-x:hidden;
+}
+/* NAVBAR */
+header nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 2rem;
+}
+header nav h1 a{
+  font-family:monospace;
+  font-size:1.2rem;
+  color:var(--accent-color);
+  text-decoration:none;
+  letter-spacing:0.15em;
+}
+.nav-links{
+  display:flex;
+  gap:2rem;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.nav-links a{
+  color:var(--text-color);
+  text-decoration:none;
+  font-weight:500;
+}
+.nav-links .active{
+  opacity:0.6;
+}
+/* PAGE CONTENT */
+main{
+  max-width:800px;
+  margin:0 auto;
+  padding:2rem;
+  position:relative;
+  z-index:2;
+}
+h2{
+  font-size:2rem;
+  text-align:center;
+  margin-bottom:0.5rem;
+}
+.meta{
+  text-align:center;
+  color:#888;
+  margin-bottom:2rem;
+}
+p{
+  font-size:1.1rem;
+  line-height:1.65;
+  margin-bottom:1.25rem;
+}
+a{
+  color:#ffffff;
+  text-decoration:underline;
+}
+a:hover{
+  opacity:0.6;
+}
+.cursor-bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  background:radial-gradient(circle at center, rgba(255,255,255,0.07), transparent 60%);
+  pointer-events:none;
+  z-index:1;
+  transition:background 0.2s ease-out;
+}
+footer{
+  text-align:center;
+  padding:2rem;
+  color:#777;
+}
+.download-box{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;
+  padding:1.5rem;
+  margin:2rem 0;
+  text-align:center;
+}
+.download-btn{
+  display:inline-block;
+  background:#ffffff;
+  color:#121212;
+  padding:0.75rem 2rem;
+  border-radius:4px;
+  text-decoration:none;
+  font-weight:600;
+  margin-top:1rem;
+  transition:opacity 0.2s;
+}
+.download-btn:hover{
+  opacity:0.8;
+}
+.highlight-box{
+  background:rgba(255,255,255,0.03);
+  border-left:3px solid #ffffff;
+  padding:1rem 1.5rem;
+  margin:1.5rem 0;
+}
+.key-metrics{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
+  gap:1rem;
+  margin:2rem 0;
+}
+.metric{
+  background:rgba(255,255,255,0.05);
+  padding:1rem;
+  border-radius:6px;
+  text-align:center;
+}
+.metric-value{
+  font-size:1.8rem;
+  font-weight:bold;
+  color:#ffffff;
+  display:block;
+}
+.metric-label{
+  font-size:0.9rem;
+  color:#888;
+  margin-top:0.25rem;
+  display:block;
+}
+</style>
+</head>
+<body>
+<div class="cursor-bg" id="cursor-bg"></div>
+<header>
+<nav>
+<h1><a href="about.html">HANNAN</a></h1>
+<ul class="nav-links">
+<li><a href="../about.html">About</a></li>
+<li><a href="../projects.html">Projects</a></li>
+<li><a href="../resume.html">Experience</a></li>
+<li><a href="../blog.html" class="active">Blog</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<h2>Merlin Properties Stock Pitch</h2>
+<p class="meta">2026.02.21 · Finance · ISMF</p>
+
+<p>
+Merlin Properties (BME: MRL) is Iberia's largest listed real estate company, operating a diversified portfolio valued at €11.5 billion across offices, logistics, shopping centres, and data centres. Trading at a 13% discount to independently appraised net asset value, the company presents a compelling opportunity driven by structural demand in AI infrastructure and prime office real estate.
+</p>
+
+<div class="highlight-box">
+<strong>Investment Thesis:</strong> BUY with base-case target of €13.95 (+12.5% upside). Merlin's MEGA Plan positions it as Spain's leading data centre developer, while maintaining market-leading occupancy rates across traditional asset classes and investment-grade credit ratings.
+</div>
+
+<div class="key-metrics">
+<div class="metric">
+<span class="metric-value">€7.0bn</span>
+<span class="metric-label">Market Cap</span>
+</div>
+<div class="metric">
+<span class="metric-value">96.7%</span>
+<span class="metric-label">Occupancy</span>
+</div>
+<div class="metric">
+<span class="metric-value">28.3%</span>
+<span class="metric-label">LTV Ratio</span>
+</div>
+<div class="metric">
+<span class="metric-value">BBB+</span>
+<span class="metric-label">S&P Rating</span>
+</div>
+</div>
+
+<p>
+The data centre story is particularly compelling. Merlin's MEGA Plan Phase I (64 MW across Madrid, Barcelona, and Bilbao) is already 70% leased to hyperscale clients including Microsoft. Phase II targets an additional 203 MW, with data centres projected to reach 40% of revenue by 2030. The segment's gross asset value grew 16.9% in FY2024 alone, reflecting both rental income acceleration and cap rate compression in the data centre market.
+</p>
+
+<p>
+Traditional segments remain robust. Office occupancy reached a record 93.7% in FY2024 with like-for-like rental growth of 3.9%, driven by structural supply constraints in the Madrid CBD. The logistics portfolio operates at 99.4% occupancy with a 511,000 sqm landbank for future development. Shopping centres posted all-time low operating cost ratios despite secular headwinds.
+</p>
+
+<p>
+Financially, Merlin generated €310.8 million in funds from operations in FY2024, up 9.4% year-over-year. The balance sheet is conservative with 100% fixed-rate debt at an average 2.46% and no maturities until November 2026. Both S&P and Moody's upgraded the company in 2024, validating its financial discipline.
+</p>
+
+<p>
+The primary risk is execution on data centre development. Permitting delays have already been flagged for two Madrid sites, which could defer rental stabilisation from 2027 to 2029-2030. Additionally, SOCIMI tax reform proposals from the Spanish government create regulatory uncertainty, though such reforms have been discussed for years without implementation.
+</p>
+
+<p>
+The valuation discount to NAV is anomalous given the quality of cash flows and growth visibility. Using a dividend discount model with conservative assumptions on data centre rental ramp-up yields a base-case fair value of €13.95 per share, representing 12.5% upside from current levels. The risk-reward profile is asymmetric, with a best-case scenario of €15.65 (+26.2%) against worst-case downside to €11.35 (-8.5%).
+</p>
+
+<div class="download-box">
+<p style="margin-bottom:0.5rem;font-size:1.05rem;">
+Full pitch deck with detailed financials, comparable analysis, and valuation models.
+</p>
+<a href="MRL_Merlin_ISMF_Pitch.pptx" class="download-btn" download>Download Full Presentation</a>
+</div>
+
+<p>
+This pitch was prepared for the Irish Student Managed Fund (ISMF) equity research competition. All analysis reflects publicly available information as of February 2026 and is intended for educational purposes only.
+</p>
+
+</main>
+<footer>
+<p>&copy; 2025 Hannan Nabi</p>
+</footer>
+<script>
+const cursorBg=document.getElementById('cursor-bg');
+document.addEventListener('mousemove',(e)=>{
+cursorBg.style.background=
+`radial-gradient(circle at ${e.clientX}px ${e.clientY}px,
+rgba(255,255,255,0.07), transparent 60%)`;
+});
+</script>
+</body>
+</html>
