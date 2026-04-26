@@ -132,22 +132,35 @@
     <p class="meta">2026.02.12 · Data Science</p>
     
     <p>
-      Machine learning has become embedded in financial analysis, from risk modelling
-      to algorithmic trading. Unlike traditional econometric frameworks, modern models
-      capture non-linear relationships within complex datasets.
-    </p>
-    
-    <p>
-      Gradient boosting, neural networks, and ensemble models increasingly drive
-      forecasting systems. However, model interpretability remains essential —
-      financial institutions must balance predictive accuracy with transparency.
-    </p>
-    
-    <p>
-      Human judgement continues to matter. Market regimes shift, structural breaks occur,
-      and historical data may mislead purely statistical systems.
-      The most effective practitioners treat machine learning as an augmentation tool,
-      not a replacement for economic reasoning.
+Machine learning has moved from the periphery of finance to its institutional core. What was once experimental is now routine: banks deploy predictive systems for credit scoring, hedge funds refine signals through pattern recognition, and insurers use statistical learning to model behavioural risk. In modern markets, the competitive edge increasingly lies not merely in data possession, but in extracting structure from noise faster and more intelligently than rivals.
+
+Traditional econometric methods remain foundational. Linear regression, ARIMA processes, and GARCH volatility models still offer interpretability and theoretical discipline. Yet financial markets are rarely linear systems. Relationships between inflation, rates, liquidity, sentiment, and asset prices often evolve in non-constant and asymmetric ways. Machine learning models are valuable precisely because they can detect these shifting patterns without imposing rigid functional assumptions.
+
+Gradient boosting methods such as XGBoost and LightGBM have become especially influential in finance because they perform well on tabular data and handle missingness, interactions, and non-linearity efficiently. Neural networks, particularly LSTMs and transformers, are increasingly used for time-series forecasting where sequence dependence matters. Ensemble systems combine multiple model classes, reducing variance and improving robustness across regimes.
+
+Bayesian methods add another critical dimension: uncertainty. In finance, a forecast without confidence bounds is often of limited use. Knowing that a stock’s expected volatility is 22% matters less than knowing the probability distribution around that estimate. Bayesian inference updates beliefs as new information arrives, making it naturally suited to markets where conditions shift continuously.
+
+P(A∣B)=
+P(B)
+P(B∣A)P(A)
+	​
+
+P(A)
+P(B∣A)
+P(B∣¬A)
+P(A∣B)=
+P(B)
+P(B∣A)P(A)
+	​
+
+≈0.68,P(B)≈0.25
+P(B)=0.25P(B|A)P(A)=0.17P(A|B)~0.68Posterior = useful evidence / total evidence
+
+Bayes’ theorem is more than a textbook identity; it is a framework for decision-making under uncertainty. A portfolio manager may begin with a prior belief that recession risk is low, then revise that probability upward after weak employment data or widening credit spreads. Markets themselves often behave as giant Bayesian machines, repricing assets as probabilities change.
+
+Still, technical sophistication does not eliminate judgement. Historical data can mislead when structural breaks occur. A model trained on low-rate environments may fail during monetary tightening. A strategy built on pre-pandemic data may underestimate fragility in supply chains or geopolitical risk. Human analysts remain essential because they contextualise data, identify regime change, and question false precision.
+
+The most effective practitioners do not treat machine learning as an oracle. They treat it as augmentation: a disciplined extension of economic reasoning, not a substitute for it. In finance, wisdom lies not in choosing between man and machine, but in combining both.
     </p>
   </main>
   
