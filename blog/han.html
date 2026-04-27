@@ -72,7 +72,7 @@
 
     main {
       padding: 3rem 2rem 4rem;
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
       position: relative;
       z-index: 2;
@@ -120,12 +120,13 @@
 
     .han-visualization {
       width: 100%;
-      max-width: 800px;
+      max-width: 1000px;
       margin: 2rem auto;
       padding: 2rem;
       background: var(--card-bg);
       border: 1px solid var(--border-color);
       border-radius: 8px;
+      overflow: hidden;
     }
 
     .han-visualization svg {
@@ -133,90 +134,107 @@
       height: auto;
     }
 
-    @keyframes pulse-core {
-      0%, 100% { r: 15; opacity: 1; }
-      50% { r: 18; opacity: 0.7; }
-    }
-
-    @keyframes pull-force {
+    @keyframes pull-down {
       0%, 100% { stroke-width: 2; opacity: 0.8; }
       50% { stroke-width: 3; opacity: 1; }
     }
 
-    @keyframes wave-expand {
-      0% { r: 50; opacity: 0.4; }
-      100% { r: 90; opacity: 0; }
+    @keyframes particle-rise {
+      0% { transform: translateY(0px); opacity: 0.8; }
+      100% { transform: translateY(-120px); opacity: 0; }
     }
 
-    @keyframes particle-float {
-      0% { transform: translateY(0px) translateX(0px); opacity: 0.8; }
-      100% { transform: translateY(100px) translateX(20px); opacity: 0; }
+    @keyframes constraint-pulse {
+      0%, 100% { r: 105; opacity: 0.3; }
+      50% { r: 110; opacity: 0.5; }
     }
 
-    @keyframes time-fall {
-      0% { transform: translateY(-150px); opacity: 1; }
-      100% { transform: translateY(150px); opacity: 0; }
+    @keyframes desire-flow {
+      0%, 100% { stroke-width: 1; opacity: 0.4; }
+      50% { stroke-width: 1.5; opacity: 0.7; }
     }
 
-    @keyframes choice-pulse {
-      0%, 100% { r: 6; opacity: 0.3; }
-      50% { r: 8; opacity: 0.6; }
+    @keyframes time-drop {
+      0% { transform: translateY(-100px); opacity: 1; }
+      100% { transform: translateY(80px); opacity: 0; }
     }
 
-    #burnout-core {
-      animation: pulse-core 2s infinite;
+    @keyframes vortex-spin {
+      0%, 100% { stroke-dasharray: 1,3; opacity: 0.5; }
+      50% { stroke-dasharray: 2,2; opacity: 0.8; }
     }
 
-    #pull-1, #pull-2, #pull-3, #pull-4 {
-      animation: pull-force 2s ease-in-out infinite;
+    @keyframes fragmentation {
+      0%, 100% { stroke-width: 1; opacity: 0.3; }
+      50% { stroke-width: 2; opacity: 0.6; }
     }
 
-    #pull-2 { animation-delay: 0.2s; }
-    #pull-3 { animation-delay: 0.4s; }
-    #pull-4 { animation-delay: 0.6s; }
-
-    #wave-1 {
-      animation: wave-expand 3s ease-out infinite;
+    #pull-down-1, #pull-down-2, #pull-down-3 {
+      animation: pull-down 2s ease-in-out infinite;
     }
 
-    #wave-2 {
-      animation: wave-expand 3s ease-out infinite 1s;
+    #pull-down-2 { animation-delay: 0.3s; }
+    #pull-down-3 { animation-delay: 0.6s; }
+
+    #burnout-particles circle {
+      animation: particle-rise 3s ease-out infinite;
     }
 
-    #wave-3 {
-      animation: wave-expand 3s ease-out infinite 2s;
+    #burnout-particles circle:nth-child(1) { animation-delay: 0s; }
+    #burnout-particles circle:nth-child(2) { animation-delay: 0.4s; }
+    #burnout-particles circle:nth-child(3) { animation-delay: 0.8s; }
+    #burnout-particles circle:nth-child(4) { animation-delay: 1.2s; }
+    #burnout-particles circle:nth-child(5) { animation-delay: 1.6s; }
+
+    #constraint-bubble {
+      animation: constraint-pulse 3s ease-in-out infinite;
     }
 
-    #particles-1 circle {
-      animation: particle-float 3s ease-out infinite;
+    #human-a, #human-b, #human-c, #human-d {
+      animation: scale-shift 2.5s ease-in-out infinite;
     }
 
-    #particles-1 circle:nth-child(1) { animation-delay: 0s; }
-    #particles-1 circle:nth-child(2) { animation-delay: 0.3s; }
-    #particles-1 circle:nth-child(3) { animation-delay: 0.6s; }
-    #particles-1 circle:nth-child(4) { animation-delay: 0.9s; }
-    #particles-1 circle:nth-child(5) { animation-delay: 1.2s; }
-    #particles-1 circle:nth-child(6) { animation-delay: 1.5s; }
-
-    #time-particles circle {
-      animation: time-fall 2.5s ease-in infinite;
+    @keyframes scale-shift {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; }
     }
 
-    #time-particles circle:nth-child(1) { animation-delay: 0s; }
-    #time-particles circle:nth-child(2) { animation-delay: 0.2s; }
-    #time-particles circle:nth-child(3) { animation-delay: 0.4s; }
-    #time-particles circle:nth-child(4) { animation-delay: 0.6s; }
-    #time-particles circle:nth-child(5) { animation-delay: 0.8s; }
-    #time-particles circle:nth-child(6) { animation-delay: 1.0s; }
-    #time-particles circle:nth-child(7) { animation-delay: 1.2s; }
+    #human-a { animation-delay: 0s; }
+    #human-b { animation-delay: 0.5s; }
+    #human-c { animation-delay: 1s; }
+    #human-d { animation-delay: 1.5s; }
 
-    #choice-1 circle, #choice-2 circle, #choice-3 circle, #choice-4 circle {
-      animation: choice-pulse 2s ease-in-out infinite;
+    #time-boxes rect {
+      animation: box-compress 2s ease-in-out infinite;
     }
 
-    #choice-2 circle { animation-delay: 0.3s; }
-    #choice-3 circle { animation-delay: 0.6s; }
-    #choice-4 circle { animation-delay: 0.9s; }
+    @keyframes box-compress {
+      0%, 100% { y: attr(y); }
+      50% { y: attr(y) - 5; }
+    }
+
+    #time-fall-particles circle {
+      animation: time-drop 2.5s ease-in infinite;
+    }
+
+    #time-fall-particles circle:nth-child(1) { animation-delay: 0s; }
+    #time-fall-particles circle:nth-child(2) { animation-delay: 0.4s; }
+    #time-fall-particles circle:nth-child(3) { animation-delay: 0.8s; }
+    #time-fall-particles circle:nth-child(4) { animation-delay: 1.2s; }
+    #time-fall-particles circle:nth-child(5) { animation-delay: 1.6s; }
+
+    #vortex {
+      animation: vortex-spin 3s linear infinite;
+    }
+
+    #final-human line {
+      animation: fragmentation 2s ease-in-out infinite;
+    }
+
+    #final-human line:nth-child(1) { animation-delay: 0s; }
+    #final-human line:nth-child(2) { animation-delay: 0.3s; }
+    #final-human line:nth-child(3) { animation-delay: 0.6s; }
+    #final-human line:nth-child(4) { animation-delay: 0.9s; }
 
     .content {
       margin-top: 2rem;
@@ -311,22 +329,6 @@
       border: none;
     }
 
-    .content p {
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-      color: var(--text-color);
-    }
-
-    .content em {
-      font-style: italic;
-      color: var(--accent-color);
-    }
-
-    .content strong {
-      font-weight: 600;
-      color: var(--accent-color);
-    }
-
     footer {
       text-align: center;
       padding: 2rem;
@@ -383,149 +385,215 @@
       </div>
 
       <div class="han-visualization">
-        <svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <style>
-              .achievement-node { fill: #ffffff; }
-              .achievement-text { font-size: 11px; fill: #888888; font-family: 'Segoe UI', sans-serif; text-anchor: middle; }
-              .achievement-label { font-size: 16px; fill: #ffffff; font-weight: bold; font-family: monospace; text-anchor: middle; }
-              .energy-line { stroke: #ffffff; stroke-width: 1.5; }
-              .pressure-wave { stroke: #ffffff; stroke-width: 2; fill: none; }
-              .exhaustion-particle { fill: #ffffff; opacity: 0.6; }
+              .human-figure { fill: #ffffff; }
+              .human-text { font-size: 10px; fill: #888888; font-family: 'Segoe UI', sans-serif; text-anchor: middle; }
+              .system-label { font-size: 13px; fill: #ffffff; font-weight: bold; font-family: monospace; }
+              .pressure-wave { stroke: #ff4444; stroke-width: 1.5; fill: none; }
+              .desire-line { stroke: #888888; stroke-width: 1; fill: none; }
+              .exhaustion-particle { fill: #ffffff; opacity: 0.7; }
+              .time-particle { fill: #ff8844; }
+              .choice-box { stroke: #ffffff; stroke-width: 1; fill: rgba(255,255,255,0.05); }
+              .energy-flow { stroke: #ffffff; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
             </style>
           </defs>
+
+          <!-- BURNOUT SOCIETY SECTION (Left Third) -->
+          <text x="150" y="30" class="system-label">BURNOUT SOCIETY</text>
           
-          <!-- Background grid to show compression -->
-          <g opacity="0.1">
-            <line x1="0" y1="0" x2="900" y2="0" stroke="#ffffff" stroke-width="1"/>
-            <line x1="0" y1="50" x2="900" y2="50" stroke="#ffffff" stroke-width="1"/>
-            <line x1="0" y1="100" x2="900" y2="100" stroke="#ffffff" stroke-width="1"/>
-            <line x1="0" y1="150" x2="900" y2="150" stroke="#ffffff" stroke-width="1"/>
-            <line x1="0" y1="200" x2="900" y2="200" stroke="#ffffff" stroke-width="1"/>
-            <line x1="0" y1="250" x2="900" y2="250" stroke="#ffffff" stroke-width="1"/>
-            <line x1="0" y1="300" x2="900" y2="300" stroke="#ffffff" stroke-width="1"/>
-            <line x1="0" y1="350" x2="900" y2="350" stroke="#ffffff" stroke-width="1"/>
-            <line x1="0" y1="400" x2="900" y2="400" stroke="#ffffff" stroke-width="1"/>
-            <line x1="0" y1="450" x2="900" y2="450" stroke="#ffffff" stroke-width="1"/>
-          </g>
+          <!-- Multiple human figures being compressed -->
+          <g id="burnout-humans">
+            <!-- Human 1 (top) -->
+            <g id="human-1">
+              <circle cx="80" cy="80" r="8" class="human-figure"/>
+              <path d="M 80 88 L 80 110" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 70 95 L 90 95" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 80 110 L 70 130" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 80 110 L 90 130" stroke="#ffffff" stroke-width="2"/>
+              <text x="80" y="155" class="human-text">Rest=Laziness</text>
+            </g>
 
-          <!-- SECTION 1: BURNOUT SOCIETY (Left) -->
-          <g id="burnout-section">
-            <!-- Central self being pulled -->
-            <circle cx="150" cy="120" r="20" fill="rgba(255,255,255,0.2)" id="burnout-core"/>
-            <circle cx="150" cy="120" r="15" class="achievement-node"/>
-            <text x="150" y="130" class="achievement-label" font-size="12">I</text>
+            <!-- Human 2 (middle-left) -->
+            <g id="human-2">
+              <circle cx="150" cy="100" r="8" class="human-figure"/>
+              <path d="M 150 108 L 150 130" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 140 115 L 160 115" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 150 130 L 140 150" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 150 130 L 160 150" stroke="#ffffff" stroke-width="2"/>
+              <text x="150" y="175" class="human-text">Limits=Defeat</text>
+            </g>
+
+            <!-- Human 3 (middle-right) -->
+            <g id="human-3">
+              <circle cx="220" cy="85" r="8" class="human-figure"/>
+              <path d="M 220 93 L 220 115" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 210 102 L 230 102" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 220 115 L 210 135" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 220 115 L 230 135" stroke="#ffffff" stroke-width="2"/>
+              <text x="220" y="160" class="human-text">Optimize</text>
+            </g>
+
+            <!-- Arrows pulling downward (compressive force) -->
+            <path class="energy-flow" d="M 80 70 L 80 50" opacity="0.8" id="pull-down-1"/>
+            <path class="energy-flow" d="M 150 90 L 150 50" opacity="0.8" id="pull-down-2"/>
+            <path class="energy-flow" d="M 220 75 L 220 50" opacity="0.8" id="pull-down-3"/>
             
-            <!-- Arrows pulling in all directions -->
-            <g id="pull-1" opacity="0.8">
-              <path d="M 170 120 L 230 120" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
-              <text x="205" y="110" class="achievement-text">OPTIMIZE</text>
-            </g>
-            <g id="pull-2" opacity="0.8">
-              <path d="M 130 120 L 70 120" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
-              <text x="95" y="110" class="achievement-text">IMPROVE</text>
-            </g>
-            <g id="pull-3" opacity="0.8">
-              <path d="M 150 100 L 150 40" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
-              <text x="160" y="65" class="achievement-text">ACHIEVE</text>
-            </g>
-            <g id="pull-4" opacity="0.8">
-              <path d="M 150 140 L 150 200" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
-              <text x="160" y="175" class="achievement-text">PERFORM</text>
+            <!-- Exhaustion particles rising -->
+            <g id="burnout-particles">
+              <circle cx="80" cy="40" r="2" class="exhaustion-particle"/>
+              <circle cx="150" cy="35" r="2" class="exhaustion-particle" opacity="0.6"/>
+              <circle cx="220" cy="45" r="2" class="exhaustion-particle" opacity="0.5"/>
+              <circle cx="120" cy="30" r="2" class="exhaustion-particle" opacity="0.4"/>
+              <circle cx="190" cy="25" r="2" class="exhaustion-particle" opacity="0.7"/>
             </g>
 
-            <!-- Exhaustion particles -->
-            <g id="particles-1">
-              <circle cx="150" cy="80" r="2" class="exhaustion-particle" opacity="0.7"/>
-              <circle cx="140" cy="95" r="2" class="exhaustion-particle" opacity="0.5"/>
-              <circle cx="160" cy="100" r="2" class="exhaustion-particle" opacity="0.6"/>
-              <circle cx="130" cy="125" r="2" class="exhaustion-particle" opacity="0.4"/>
-              <circle cx="170" cy="130" r="2" class="exhaustion-particle" opacity="0.5"/>
-              <circle cx="145" cy="155" r="2" class="exhaustion-particle" opacity="0.6"/>
-            </g>
-
-            <text x="150" y="240" class="achievement-label" font-size="14">BURNOUT</text>
-            <text x="150" y="260" class="achievement-text" font-size="10">Freedom = Compulsion</text>
+            <!-- Pressure box showing compression -->
+            <rect x="60" y="200" width="180" height="80" fill="rgba(255,68,68,0.1)" stroke="#ff4444" stroke-width="2" stroke-dasharray="5,5"/>
+            <text x="150" y="230" class="human-text" font-size="11">INTERNAL COMPULSION</text>
+            <text x="150" y="245" class="human-text" font-size="11">No External Force Needed</text>
           </g>
 
-          <!-- SECTION 2: PSYCHOPOLITICS (Center) -->
+          <!-- PSYCHOPOLITICS SECTION (Middle Third) -->
+          <text x="500" y="30" class="system-label">PSYCHOPOLITICS</text>
+
           <g id="psycho-section">
-            <!-- Surveillance/algorithm waves -->
-            <circle cx="450" cy="120" r="50" fill="none" stroke="#888888" stroke-width="1.5" opacity="0.4" id="wave-1"/>
-            <circle cx="450" cy="120" r="70" fill="none" stroke="#888888" stroke-width="1" opacity="0.2" id="wave-2"/>
-            <circle cx="450" cy="120" r="90" fill="none" stroke="#888888" stroke-width="0.5" opacity="0.1" id="wave-3"/>
-
-            <!-- Central desire/preference node -->
-            <circle cx="450" cy="120" r="18" class="achievement-node" id="desire-core"/>
-            <text x="450" y="130" class="achievement-label" font-size="12">YOU</text>
-
-            <!-- Choice options being steered -->
-            <g id="choice-1">
-              <circle cx="500" cy="80" r="6" fill="rgba(255,255,255,0.3)"/>
-              <path d="M 456 110 Q 475 95 500 80" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.5"/>
-            </g>
-            <g id="choice-2">
-              <circle cx="520" cy="120" r="6" fill="rgba(255,255,255,0.3)"/>
-              <path d="M 468 120 Q 490 120 520 120" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.5"/>
-            </g>
-            <g id="choice-3">
-              <circle cx="500" cy="160" r="6" fill="rgba(255,255,255,0.3)"/>
-              <path d="M 456 130 Q 475 145 500 160" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.5"/>
-            </g>
-            <g id="choice-4">
-              <circle cx="380" cy="150" r="6" fill="rgba(255,255,255,0.3)"/>
-              <path d="M 440 130 Q 410 140 380 150" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.5"/>
-            </g>
-
-            <text x="450" y="240" class="achievement-label" font-size="14">PSYCHOPOLITICS</text>
-            <text x="450" y="260" class="achievement-text" font-size="10">Power through Desire</text>
-          </g>
-
-          <!-- SECTION 3: ACCELERATION (Right) -->
-          <g id="accel-section">
-            <!-- Time being consumed -->
-            <rect x="700" y="40" width="80" height="160" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3" id="time-box"/>
+            <!-- Central algorithm/network node -->
+            <circle cx="500" cy="120" r="30" fill="none" stroke="#888888" stroke-width="2" opacity="0.5"/>
+            <circle cx="500" cy="120" r="50" fill="none" stroke="#888888" stroke-width="1" opacity="0.3"/>
+            <circle cx="500" cy="120" r="70" fill="none" stroke="#888888" stroke-width="1" opacity="0.15"/>
             
-            <!-- Falling/compressed time particles -->
-            <g id="time-particles">
-              <circle cx="710" cy="60" r="3" fill="#ffffff" opacity="0.8"/>
-              <circle cx="730" cy="75" r="3" fill="#ffffff" opacity="0.7"/>
-              <circle cx="750" cy="85" r="3" fill="#ffffff" opacity="0.6"/>
-              <circle cx="765" cy="105" r="3" fill="#ffffff" opacity="0.5"/>
-              <circle cx="755" cy="125" r="3" fill="#ffffff" opacity="0.6"/>
-              <circle cx="720" cy="145" r="3" fill="#ffffff" opacity="0.7"/>
-              <circle cx="740" cy="165" r="3" fill="#ffffff" opacity="0.8"/>
+            <!-- Algorithm center -->
+            <circle cx="500" cy="120" r="8" fill="#888888"/>
+            <text x="500" y="127" class="human-text" font-size="9" fill="#000000">AI</text>
+
+            <!-- Multiple human figures surrounding, being steered -->
+            <!-- Human A (top-right) -->
+            <g id="human-a">
+              <circle cx="580" cy="80" r="7" class="human-figure"/>
+              <path d="M 580 87 L 580 105" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 572 94 L 588 94" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 580 105 L 572 120" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 580 105 L 588 120" stroke="#ffffff" stroke-width="2"/>
+              <!-- Steering lines -->
+              <path class="desire-line" d="M 573 87 Q 540 100 510 115"/>
+              <text x="580" y="140" class="human-text">Choice</text>
             </g>
 
-            <!-- Acceleration arrows showing time compression -->
-            <g id="accel-1">
-              <path d="M 680 100 L 700 100" stroke="#ffffff" stroke-width="2.5" marker-end="url(#arrowhead-large)"/>
-              <path d="M 670 130 L 700 130" stroke="#ffffff" stroke-width="2.5" marker-end="url(#arrowhead-large)" opacity="0.7"/>
-              <path d="M 660 160 L 700 160" stroke="#ffffff" stroke-width="2.5" marker-end="url(#arrowhead-large)" opacity="0.5"/>
+            <!-- Human B (bottom-right) -->
+            <g id="human-b">
+              <circle cx="600" cy="170" r="7" class="human-figure"/>
+              <path d="M 600 177 L 600 195" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 592 184 L 608 184" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 600 195 L 592 210" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 600 195 L 608 210" stroke="#ffffff" stroke-width="2"/>
+              <path class="desire-line" d="M 593 177 Q 540 150 510 125"/>
+              <text x="600" y="230" class="human-text">Preference</text>
             </g>
 
-            <!-- Layers of activity -->
-            <rect x="700" y="45" width="80" height="15" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.4"/>
-            <rect x="700" y="90" width="80" height="15" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
-            <rect x="700" y="135" width="80" height="15" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.2"/>
+            <!-- Human C (bottom-left) -->
+            <g id="human-c">
+              <circle cx="420" cy="175" r="7" class="human-figure"/>
+              <path d="M 420 182 L 420 200" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 412 189 L 428 189" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 420 200 L 412 215" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 420 200 L 428 215" stroke="#ffffff" stroke-width="2"/>
+              <path class="desire-line" d="M 427 182 Q 460 150 490 125"/>
+              <text x="420" y="235" class="human-text">Desire</text>
+            </g>
 
-            <text x="740" y="240" class="achievement-label" font-size="14">ACCELERATION</text>
-            <text x="740" y="260" class="achievement-text" font-size="10">Time Colonized</text>
+            <!-- Human D (top-left) -->
+            <g id="human-d">
+              <circle cx="420" cy="85" r="7" class="human-figure"/>
+              <path d="M 420 92 L 420 110" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 412 99 L 428 99" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 420 110 L 412 125" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 420 110 L 428 125" stroke="#ffffff" stroke-width="2"/>
+              <path class="desire-line" d="M 427 92 Q 460 105 490 115"/>
+              <text x="420" y="145" class="human-text">Agency</text>
+            </g>
+
+            <!-- Invisible constraint bubble around humans -->
+            <circle cx="500" cy="120" r="105" fill="none" stroke="#ff4444" stroke-width="1" opacity="0.3" stroke-dasharray="4,4" id="constraint-bubble"/>
+
+            <text x="500" y="310" class="human-text" font-size="11">APPARENT FREEDOM = CONSTRAINED CHOICE</text>
           </g>
+
+          <!-- ACCELERATION SECTION (Right Third) -->
+          <text x="850" y="30" class="system-label">ACCELERATION</text>
+
+          <g id="accel-section">
+            <!-- Single human figure in time collapse -->
+            <g id="human-accel">
+              <circle cx="850" cy="120" r="8" class="human-figure"/>
+              <path d="M 850 128 L 850 150" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 840 135 L 860 135" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 850 150 L 840 170" stroke="#ffffff" stroke-width="2"/>
+              <path d="M 850 150 L 860 170" stroke="#ffffff" stroke-width="2"/>
+              <text x="850" y="200" class="human-text">Running</text>
+            </g>
+
+            <!-- Time boxes stacking -->
+            <g id="time-boxes">
+              <rect x="800" y="60" width="100" height="20" class="choice-box" opacity="0.8" id="box-1"/>
+              <text x="850" y="76" class="human-text" font-size="8">EMAIL</text>
+
+              <rect x="800" y="90" width="100" height="20" class="choice-box" opacity="0.6" id="box-2"/>
+              <text x="850" y="106" class="human-text" font-size="8">WORK</text>
+
+              <rect x="800" y="120" width="100" height="20" class="choice-box" opacity="0.4" id="box-3"/>
+              <text x="850" y="136" class="human-text" font-size="8">SELF-IMPROVEMENT</text>
+
+              <rect x="800" y="150" width="100" height="20" class="choice-box" opacity="0.3" id="box-4"/>
+              <text x="850" y="166" class="human-text" font-size="8">NETWORK</text>
+
+              <rect x="800" y="180" width="100" height="20" class="choice-box" opacity="0.2" id="box-5"/>
+              <text x="850" y="196" class="human-text" font-size="8">MONITOR</text>
+            </g>
+
+            <!-- Time particles falling -->
+            <g id="time-fall-particles">
+              <circle cx="820" cy="220" r="1.5" class="time-particle" opacity="0.8"/>
+              <circle cx="840" cy="240" r="1.5" class="time-particle" opacity="0.6"/>
+              <circle cx="860" cy="260" r="1.5" class="time-particle" opacity="0.4"/>
+              <circle cx="850" cy="280" r="1.5" class="time-particle" opacity="0.7"/>
+              <circle cx="830" cy="300" r="1.5" class="time-particle" opacity="0.5"/>
+            </g>
+
+            <!-- Vortex showing time consumption -->
+            <path class="pressure-wave" d="M 850 70 Q 880 100 850 130 Q 820 160 850 190" opacity="0.5" id="vortex"/>
+
+            <text x="850" y="330" class="human-text" font-size="11">EVERY MOMENT OPTIMIZED</text>
+          </g>
+
+          <!-- BOTTOM: THE EXHAUSTED SUBJECT -->
+          <line x1="50" y1="380" x2="950" y2="380" stroke="#ffffff" stroke-width="1" opacity="0.2"/>
+          <text x="500" y="420" class="system-label" text-anchor="middle">THE SUBJECT</text>
+          
+          <!-- Final human figure at bottom, fragmented -->
+          <g id="final-human">
+            <circle cx="500" cy="480" r="10" class="human-figure" opacity="0.6"/>
+            <path d="M 500 490 L 500 510" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+            <path d="M 485 500 L 515 500" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+            <path d="M 500 510 L 480 530" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+            <path d="M 500 510 L 520 530" stroke="#ffffff" stroke-width="2" opacity="0.5"/>
+            
+            <!-- Fragmentation lines -->
+            <line x1="500" y1="470" x2="450" y2="440" stroke="#ff4444" stroke-width="1" opacity="0.4"/>
+            <line x1="500" y1="470" x2="550" y2="440" stroke="#ff4444" stroke-width="1" opacity="0.4"/>
+            <line x1="500" y1="470" x2="480" y2="520" stroke="#ff4444" stroke-width="1" opacity="0.3"/>
+            <line x1="500" y1="470" x2="520" y2="520" stroke="#ff4444" stroke-width="1" opacity="0.3"/>
+          </g>
+
+          <text x="500" y="570" class="human-text" font-size="12" text-anchor="middle">Burned Out | Surveilled | Accelerated</text>
 
           <!-- Arrow markers -->
           <defs>
             <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
               <polygon points="0 0, 10 3, 0 6" fill="#ffffff"/>
             </marker>
-            <marker id="arrowhead-large" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-              <polygon points="0 0, 10 3, 0 6" fill="#ffffff"/>
-            </marker>
           </defs>
-
-          <!-- Connecting flow at bottom -->
-          <path d="M 200 280 L 450 280 L 700 280" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.4" stroke-dasharray="5,5"/>
-          <text x="450" y="310" class="achievement-text" font-size="11" text-anchor="middle">THE EXHAUSTED SUBJECT</text>
         </svg>
       </div>
 
@@ -575,7 +643,7 @@
           </div>
         </div>
       </div>
-      
+
 <h3 style="text-align: center; margin-bottom: 1.5rem;">Read Full Essay</h3>
       
        <iframe 
@@ -588,6 +656,7 @@
         overflow:hidden;
       ">
     </iframe>
+
 
     </article>
   </main>
