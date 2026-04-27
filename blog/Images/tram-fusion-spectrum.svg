@@ -1,0 +1,103 @@
+<svg width="100%" viewBox="0 0 680 480" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>T.R.A.M Genre Topology</title>
+<desc>Multi-dimensional fusion landscape mapping harmonic complexity, structural innovation, technical mastery, and avant-garde rhythm into a unified sonic identity.</desc>
+<defs>
+<style>
+:root { color-scheme: light dark; }
+@media (prefers-color-scheme: dark) {
+  .axis-line { stroke: #5F5E5A; stroke-width: 0.5; opacity: 0.5; }
+  .label-axis { fill: #888780; font-size: 10px; }
+  .label-main { fill: #e8e6da; font-weight: 500; font-size: 11px; }
+  .label-sub { fill: #a8a6a0; font-size: 9px; }
+  .node-accent { fill: #534AB7; }
+  .node-teal { fill: #0F6E56; }
+  .node-coral { fill: #993C1D; }
+  .node-amber { fill: #854F0B; }
+  .convergence-line { stroke: #7F77DD; stroke-width: 1.5; }
+  .field-line { stroke: #534AB7; opacity: 0.15; stroke-width: 0.5; }
+}
+@media (prefers-color-scheme: light) {
+  .axis-line { stroke: #B4B2A9; stroke-width: 0.5; opacity: 0.5; }
+  .label-axis { fill: #888780; font-size: 10px; }
+  .label-main { fill: #1a1a17; font-weight: 500; font-size: 11px; }
+  .label-sub { fill: #73726c; font-size: 9px; }
+  .node-accent { fill: #7F77DD; }
+  .node-teal { fill: #1D9E75; }
+  .node-coral { fill: #D85A30; }
+  .node-amber { fill: #BA7517; }
+  .convergence-line { stroke: #378ADD; stroke-width: 1.5; }
+  .field-line { stroke: #AFA9EC; opacity: 0.15; stroke-width: 0.5; }
+}
+</style>
+</defs>
+
+<!-- Grid field background -->
+<line x1="40" y1="100" x2="640" y2="100" class="field-line"/>
+<line x1="40" y1="150" x2="640" y2="150" class="field-line"/>
+<line x1="40" y1="200" x2="640" y2="200" class="field-line"/>
+<line x1="40" y1="250" x2="640" y2="250" class="field-line"/>
+<line x1="40" y1="300" x2="640" y2="300" class="field-line"/>
+<line x1="40" y1="350" x2="640" y2="350" class="field-line"/>
+
+<line x1="90" y1="60" x2="90" y2="380" class="field-line"/>
+<line x1="180" y1="60" x2="180" y2="380" class="field-line"/>
+<line x1="270" y1="60" x2="270" y2="380" class="field-line"/>
+<line x1="360" y1="60" x2="360" y2="380" class="field-line"/>
+<line x1="450" y1="60" x2="450" y2="380" class="field-line"/>
+<line x1="540" y1="60" x2="540" y2="380" class="field-line"/>
+<line x1="630" y1="60" x2="630" y2="380" class="field-line"/>
+
+<!-- Axes -->
+<text x="50" y="30" class="label-axis">Harmonic Complexity →</text>
+<text x="20" y="100" class="label-axis">Technical Mastery ↑</text>
+
+<!-- Harmonic complexity axis -->
+<path d="M40,370 L640,370" class="axis-line" stroke-width="1"/>
+
+<!-- Technical mastery axis -->
+<path d="M40,60 L40,370" class="axis-line" stroke-width="1"/>
+
+<!-- Node 1: Harmonic dimension (top-left) -->
+<circle cx="100" cy="120" r="20" class="node-accent" opacity="0.8"/>
+<text x="100" y="118" class="label-main" text-anchor="middle" font-size="10">HARMONIC</text>
+<text x="100" y="145" class="label-sub" text-anchor="middle">Chromatic density</text>
+<text x="100" y="155" class="label-sub" text-anchor="middle">voice leading</text>
+
+<!-- Node 2: Technical dimension (bottom-left) -->
+<circle cx="100" cy="320" r="20" class="node-coral" opacity="0.8"/>
+<text x="100" y="318" class="label-main" text-anchor="middle" font-size="10">TECHNICAL</text>
+<text x="100" y="345" class="label-sub" text-anchor="middle">Precision</text>
+<text x="100" y="355" class="label-sub" text-anchor="middle">aggression</text>
+
+<!-- Node 3: Structural dimension (top-right) -->
+<circle cx="580" cy="140" r="20" class="node-accent" opacity="0.8"/>
+<text x="580" y="138" class="label-main" text-anchor="middle" font-size="10">STRUCTURAL</text>
+<text x="580" y="165" class="label-sub" text-anchor="middle">Formal innovation</text>
+<text x="580" y="175" class="label-sub" text-anchor="middle">prog complexity</text>
+
+<!-- Node 4: Avant-garde dimension (bottom-right) -->
+<circle cx="580" cy="320" r="20" class="node-amber" opacity="0.8"/>
+<text x="580" y="318" class="label-main" text-anchor="middle" font-size="10">AVANT-GARDE</text>
+<text x="580" y="345" class="label-sub" text-anchor="middle">Metric rupture</text>
+<text x="580" y="355" class="label-sub" text-anchor="middle">polyrhythmic</text>
+
+<!-- Central convergence point -->
+<circle cx="340" cy="220" r="24" class="node-teal" opacity="0.9"/>
+<text x="340" y="215" class="label-main" text-anchor="middle" font-size="12">T.R.A.M</text>
+<text x="340" y="230" class="label-sub" text-anchor="middle" font-size="8">synthesis</text>
+
+<!-- Convergence lines from corners to center -->
+<path d="M120,140 Q230,180 316,210" class="convergence-line" fill="none" stroke-width="1.5"/>
+<path d="M120,300 Q230,260 316,230" class="convergence-line" fill="none" stroke-width="1.5"/>
+<path d="M560,160 Q450,190 364,210" class="convergence-line" fill="none" stroke-width="1.5"/>
+<path d="M560,300 Q450,260 364,230" class="convergence-line" fill="none" stroke-width="1.5"/>
+
+<!-- Aesthetic rings around center -->
+<circle cx="340" cy="220" r="50" fill="none" class="convergence-line" opacity="0.3" stroke-width="0.5"/>
+<circle cx="340" cy="220" r="70" fill="none" class="convergence-line" opacity="0.15" stroke-width="0.5"/>
+
+<!-- Bottom description -->
+<text x="340" y="420" class="label-main" text-anchor="middle" font-size="12">Unified Field: Seamless synthesis of harmonic language, structural ambition, technical precision, and rhythmic innovation</text>
+<text x="340" y="438" class="label-sub" text-anchor="middle">Control across four dimensions simultaneously—mathematics rendered as visceral, lived music</text>
+<text x="340" y="453" class="label-sub" text-anchor="middle">Avant-garde method: structured, not chaotic. Demanding, not inaccessible. Rigorous mastery in service of expressive intent</text>
+</svg>

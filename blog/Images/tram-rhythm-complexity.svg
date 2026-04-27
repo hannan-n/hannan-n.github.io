@@ -1,0 +1,155 @@
+<svg width="100%" viewBox="0 0 680 580" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>T.R.A.M Metric Modulation Architecture</title>
+<desc>Sophisticated visualization of polyrhythmic stratification, metric ruptures, and harmonic-rhythmic convergence in T.R.A.M's compositional structure.</desc>
+<defs>
+<style>
+:root { color-scheme: light dark; }
+@media (prefers-color-scheme: dark) {
+  .meter-label { fill: #e8e6da; font-weight: 500; font-size: 11px; }
+  .sublabel { fill: #a8a6a0; font-size: 9px; }
+  .pulse-strong { fill: #534AB7; }
+  .pulse-med { fill: #7F77DD; }
+  .pulse-weak { fill: #999999; opacity: 0.6; }
+  .layer-label { fill: #a8a6a0; font-size: 10px; font-weight: 500; }
+  .axis-line { stroke: #5F5E5A; stroke-width: 1; }
+  .rupture-line { stroke: #A32D2D; stroke-width: 2; }
+  .coherence { stroke: #0F6E56; stroke-width: 1.5; }
+}
+@media (prefers-color-scheme: light) {
+  .meter-label { fill: #1a1a17; font-weight: 500; font-size: 11px; }
+  .sublabel { fill: #73726c; font-size: 9px; }
+  .pulse-strong { fill: #7F77DD; }
+  .pulse-med { fill: #B5D4F4; }
+  .pulse-weak { fill: #999999; opacity: 0.4; }
+  .layer-label { fill: #73726c; font-size: 10px; font-weight: 500; }
+  .axis-line { stroke: #B4B2A9; stroke-width: 1; }
+  .rupture-line { stroke: #E24B4A; stroke-width: 2; }
+  .coherence { stroke: #1D9E75; stroke-width: 1.5; }
+}
+</style>
+</defs>
+
+<!-- Title -->
+<text x="20" y="25" class="meter-label" font-size="13">Metric Modulation and Polyrhythmic Stratification</text>
+
+<!-- Stage 1: Metric reference -->
+<g>
+<text x="20" y="60" class="layer-label">Stage I: Tonal Reference (4/4)</text>
+<line x1="40" y1="75" x2="640" y2="75" class="axis-line" stroke-width="1"/>
+
+<!-- Four quarter notes -->
+<circle cx="80" cy="75" r="7" class="pulse-strong"/>
+<circle cx="180" cy="75" r="7" class="pulse-strong"/>
+<circle cx="280" cy="75" r="7" class="pulse-strong"/>
+<circle cx="380" cy="75" r="7" class="pulse-strong"/>
+
+<text x="80" y="105" class="sublabel" text-anchor="middle" font-size="8">Beat 1</text>
+<text x="180" y="105" class="sublabel" text-anchor="middle" font-size="8">Beat 2</text>
+<text x="280" y="105" class="sublabel" text-anchor="middle" font-size="8">Beat 3</text>
+<text x="380" y="105" class="sublabel" text-anchor="middle" font-size="8">Beat 4</text>
+
+<text x="500" y="80" class="sublabel">Structural anchor</text>
+</g>
+
+<!-- Arrow to Stage 2 -->
+<path d="M340,115 L340,135" stroke="currentColor" stroke-width="1.5" fill="none"/>
+
+<!-- Stage 2: Metric perturbation -->
+<g>
+<text x="20" y="160" class="layer-label">Stage II: Metric Shift (5/4)</text>
+<line x1="40" y1="175" x2="640" y2="175" class="axis-line" stroke-width="1"/>
+
+<!-- Five quarter notes -->
+<circle cx="80" cy="175" r="7" class="pulse-strong"/>
+<circle cx="140" cy="175" r="7" class="pulse-strong"/>
+<circle cx="200" cy="175" r="7" class="pulse-strong"/>
+<circle cx="260" cy="175" r="7" class="pulse-strong"/>
+<circle cx="320" cy="175" r="7" class="pulse-strong"/>
+
+<text x="80" y="205" class="sublabel" text-anchor="middle" font-size="8">1</text>
+<text x="140" y="205" class="sublabel" text-anchor="middle" font-size="8">2</text>
+<text x="200" y="205" class="sublabel" text-anchor="middle" font-size="8">3</text>
+<text x="260" y="205" class="sublabel" text-anchor="middle" font-size="8">4</text>
+<text x="320" y="205" class="sublabel" text-anchor="middle" font-size="8">5</text>
+
+<text x="500" y="180" class="sublabel">Asymmetric tension</text>
+
+<!-- Visual pulse timing against 4/4 grid -->
+<line x1="80" y1="225" x2="80" y2="235" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+<line x1="140" y1="220" x2="140" y2="235" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+<line x1="200" y1="215" x2="200" y2="235" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+<line x1="260" y1="220" x2="260" y2="235" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+<line x1="320" y1="225" x2="320" y2="235" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+</g>
+
+<!-- Arrow to Stage 3 -->
+<path d="M340,245 L340,265" stroke="currentColor" stroke-width="1.5" fill="none"/>
+
+<!-- Stage 3: Rupture -->
+<g>
+<text x="20" y="290" class="layer-label">Stage III: Rhythmic Rupture (7/8)</text>
+<line x1="40" y1="305" x2="640" y2="305" class="rupture-line" stroke-dasharray="2,2"/>
+
+<!-- Seven eighth notes -->
+<circle cx="70" cy="305" r="6" class="pulse-strong"/>
+<circle cx="120" cy="305" r="6" class="pulse-strong"/>
+<circle cx="170" cy="305" r="6" class="pulse-strong"/>
+<circle cx="220" cy="305" r="6" class="pulse-strong"/>
+<circle cx="270" cy="305" r="6" class="pulse-strong"/>
+<circle cx="320" cy="305" r="6" class="pulse-strong"/>
+<circle cx="370" cy="305" r="6" class="pulse-strong"/>
+
+<text x="500" y="310" class="sublabel">Metric disruption</text>
+</g>
+
+<!-- Spacer -->
+<line x1="40" y1="340" x2="640" y2="340" class="axis-line" stroke-width="0.5" opacity="0.3"/>
+
+<!-- Polyrhythmic layers -->
+<g>
+<text x="20" y="375" class="meter-label" font-size="12">Polyrhythmic Stratification</text>
+
+<!-- Percussion grid: 16th notes -->
+<g>
+<text x="20" y="400" class="layer-label">Grid (16th notes):</text>
+<circle cx="130" cy="395" r="3" class="pulse-strong"/>
+<circle cx="155" cy="395" r="3" class="pulse-strong"/>
+<circle cx="180" cy="395" r="3" class="pulse-strong"/>
+<circle cx="205" cy="395" r="3" class="pulse-strong"/>
+<circle cx="230" cy="395" r="3" class="pulse-strong"/>
+<circle cx="255" cy="395" r="3" class="pulse-strong"/>
+<circle cx="280" cy="395" r="3" class="pulse-strong"/>
+<circle cx="305" cy="395" r="3" class="pulse-strong"/>
+<circle cx="330" cy="395" r="3" class="pulse-strong"/>
+<circle cx="355" cy="395" r="3" class="pulse-strong"/>
+<circle cx="380" cy="395" r="3" class="pulse-strong"/>
+<circle cx="405" cy="395" r="3" class="pulse-strong"/>
+</g>
+
+<!-- Bass: triplet feel -->
+<g>
+<text x="20" y="430" class="layer-label">Bass (triplet swing):</text>
+<circle cx="130" cy="425" r="3" class="pulse-med"/>
+<circle cx="200" cy="425" r="3" class="pulse-med"/>
+<circle cx="270" cy="425" r="3" class="pulse-med"/>
+<circle cx="340" cy="425" r="3" class="pulse-med"/>
+<circle cx="410" cy="425" r="3" class="pulse-med"/>
+</g>
+
+<!-- Harmonic layer: syncopated -->
+<g>
+<text x="20" y="460" class="layer-label">Harmonic (syncopated):</text>
+<circle cx="145" cy="455" r="3" class="pulse-med"/>
+<circle cx="215" cy="455" r="3" class="pulse-med"/>
+<circle cx="285" cy="455" r="3" class="pulse-med"/>
+<circle cx="355" cy="455" r="3" class="pulse-med"/>
+<circle cx="425" cy="455" r="3" class="pulse-med"/>
+</g>
+</g>
+
+<!-- Convergence zone -->
+<rect x="50" y="490" width="580" height="70" fill="none" class="coherence" stroke-width="1.5" rx="2"/>
+<text x="340" y="515" class="meter-label" text-anchor="middle" font-size="12">Metric Coherence Point</text>
+<text x="340" y="533" class="sublabel" text-anchor="middle">Asymmetric layers converge with absolute precision at defined moments</text>
+<text x="340" y="550" class="sublabel" text-anchor="middle">Rhythmic complexity resolved through structural control - mathematics as musical syntax</text>
+</svg>

@@ -1,0 +1,143 @@
+<svg width="100%" viewBox="0 0 680 600" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Bayesian Volatility Forecasting Pipeline</title>
+<desc>Information flow through realized variance input, Bayesian neural processing, and probabilistic posterior inference.</desc>
+<defs>
+<marker id="arrow-sm" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+<path d="M1 1L6 4L1 7" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+<style>
+:root { color-scheme: light dark; }
+@media (prefers-color-scheme: dark) {
+  text { fill: #e8e6da; }
+  .label { fill: #e8e6da; font-weight: 500; font-size: 12px; }
+  .sublabel { fill: #a8a6a0; font-size: 10px; }
+  .flow-line { stroke: #534AB7; }
+  .data-flow { stroke: #0F6E56; }
+  .posterior-flow { stroke: #854F0B; }
+}
+@media (prefers-color-scheme: light) {
+  text { fill: #3d3d3a; }
+  .label { fill: #1a1a17; font-weight: 500; font-size: 12px; }
+  .sublabel { fill: #73726c; font-size: 10px; }
+  .flow-line { stroke: #7F77DD; }
+  .data-flow { stroke: #1D9E75; }
+  .posterior-flow { stroke: #BA7517; }
+}
+</style>
+</defs>
+
+<!-- Stage 1: Realized Variance -->
+<g>
+<text x="20" y="25" class="label">t−1 Historical</text>
+<circle cx="60" cy="50" r="15" class="flow-line" fill="none" stroke-width="1.5"/>
+<text x="60" y="54" class="label" text-anchor="middle" font-size="10">RV₁</text>
+<circle cx="120" cy="50" r="15" class="flow-line" fill="none" stroke-width="1.5"/>
+<text x="120" y="54" class="label" text-anchor="middle" font-size="10">RV₂</text>
+<circle cx="180" cy="50" r="15" class="flow-line" fill="none" stroke-width="1.5"/>
+<text x="180" y="54" class="label" text-anchor="middle" font-size="10">RV₃</text>
+<text x="220" y="55" class="sublabel">… sequence</text>
+
+<path d="M60,70 L120,70 M120,70 L180,70" class="data-flow" stroke-width="1"/>
+</g>
+
+<!-- Arrow down -->
+<path d="M120,85 L120,110" class="data-flow" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+
+<!-- Stage 2: LSTM encoder -->
+<g>
+<text x="20" y="130" class="label">Neural Processing</text>
+<rect x="60" y="115" width="120" height="50" class="flow-line" fill="none" stroke-width="1"/>
+<text x="120" y="135" class="label" text-anchor="middle">LSTM Hidden State</text>
+<text x="120" y="150" class="sublabel" text-anchor="middle">hₜ ∈ ℝᵈ</text>
+</g>
+
+<!-- Arrow down -->
+<path d="M120,165 L120,190" class="data-flow" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+
+<!-- Stage 3: Bayesian split -->
+<g>
+<text x="20" y="210" class="label">Bayesian Decomposition</text>
+
+<!-- Mean head -->
+<g>
+<rect x="40" y="215" width="65" height="50" class="flow-line" fill="none" stroke-width="1"/>
+<text x="72.5" y="232" class="label" text-anchor="middle" font-size="10">μ Network</text>
+<text x="72.5" y="250" class="sublabel" text-anchor="middle">E[σ²ₜ₊₁]</text>
+</g>
+
+<!-- Variance head -->
+<g>
+<rect x="135" y="215" width="70" height="50" class="flow-line" fill="none" stroke-width="1"/>
+<text x="170" y="232" class="label" text-anchor="middle" font-size="10">σ Network</text>
+<text x="170" y="250" class="sublabel" text-anchor="middle">log σ(ψₜ)</text>
+</g>
+
+<!-- Arrows -->
+<path d="M90,190 L72.5,215" class="data-flow" stroke-width="1" marker-end="url(#arrow-sm)"/>
+<path d="M120,190 L170,215" class="data-flow" stroke-width="1" marker-end="url(#arrow-sm)"/>
+</g>
+
+<!-- Arrows down -->
+<path d="M72.5,265 L72.5,290" class="data-flow" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+<path d="M170,265 L170,290" class="data-flow" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+
+<!-- Stage 4: Distribution parameterization -->
+<g>
+<text x="20" y="310" class="label">Predictive Distribution</text>
+<circle cx="72.5" cy="335" r="12" class="flow-line" fill="none" stroke-width="1"/>
+<text x="72.5" y="340" class="sublabel" text-anchor="middle" font-size="9">μ*</text>
+<circle cx="170" cy="335" r="12" class="flow-line" fill="none" stroke-width="1"/>
+<text x="170" y="340" class="sublabel" text-anchor="middle" font-size="9">σ*</text>
+
+<!-- Output formula -->
+<rect x="50" y="360" width="240" height="50" class="flow-line" fill="none" stroke-width="1"/>
+<text x="170" y="377" class="label" text-anchor="middle">σ²ₜ₊₁ ~ 𝒩(μ*, σ*²)</text>
+<text x="170" y="393" class="sublabel" text-anchor="middle">Aleatoric + epistemic uncertainty</text>
+</g>
+
+<!-- Arrow down to Bayesian update -->
+<path d="M170,410 L170,450" class="data-flow" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+
+<!-- Right side: Prior-Posterior -->
+<g>
+<text x="360" y="25" class="label">Bayesian Belief Cascade</text>
+
+<!-- Prior -->
+<rect x="320" y="50" width="130" height="70" class="flow-line" fill="none" stroke-width="1"/>
+<text x="385" y="70" class="label" text-anchor="middle" font-size="11">Prior</text>
+<text x="385" y="88" class="sublabel" text-anchor="middle">p(θ) historical</text>
+<text x="385" y="102" class="sublabel" text-anchor="middle">distributions</text>
+
+<!-- Arrow down -->
+<path d="M385,120 L385,145" class="posterior-flow" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+
+<!-- Likelihood -->
+<rect x="320" y="145" width="130" height="70" class="flow-line" fill="none" stroke-width="1"/>
+<text x="385" y="165" class="label" text-anchor="middle" font-size="11">Likelihood</text>
+<text x="385" y="183" class="sublabel" text-anchor="middle">p(yₜ|θ)</text>
+<text x="385" y="197" class="sublabel" text-anchor="middle">realized variance</text>
+
+<!-- Arrow down -->
+<path d="M385,215 L385,240" class="posterior-flow" stroke-width="1.5" marker-end="url(#arrow-sm)"/>
+
+<!-- Posterior -->
+<rect x="320" y="240" width="130" height="80" class="flow-line" fill="none" stroke-width="1.5"/>
+<text x="385" y="265" class="label" text-anchor="middle" font-size="12">Posterior</text>
+<text x="385" y="285" class="sublabel" text-anchor="middle">p(θ|y₁:ₜ)</text>
+<text x="385" y="302" class="sublabel" text-anchor="middle">updated beliefs +</text>
+<text x="385" y="313" class="sublabel" text-anchor="middle">confidence</text>
+</g>
+
+<!-- Feedback from main pipeline to posterior -->
+<path d="M290,385 Q310,380 320,280" class="posterior-flow" stroke-width="1" stroke-dasharray="2,2" marker-end="url(#arrow-sm)"/>
+<text x="295" y="365" class="sublabel" font-size="9">Feedback</text>
+
+<!-- Bottom: Summary -->
+<g>
+<rect x="30" y="480" width="620" height="100" fill="none" class="flow-line" stroke-width="1.5"/>
+<text x="340" y="505" class="label" text-anchor="middle" font-size="13">Continuous Belief Updating</text>
+<text x="40" y="530" class="sublabel">Each new volatility observation refines the posterior, allowing forecasts to adapt intelligently to market regimes</text>
+<text x="40" y="548" class="sublabel">The model quantifies both prediction uncertainty (aleatoric) and parameter uncertainty (epistemic),</text>
+<text x="40" y="565" class="sublabel">essential for tail-risk assessment and robust portfolio construction during stress periods</text>
+</g>
+</svg>
