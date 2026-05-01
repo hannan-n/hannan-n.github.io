@@ -110,6 +110,39 @@
       border-radius: 8px;
     }
 
+    /* Filter tabs styles */
+    .filter-tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.7rem 1.5rem;
+      background: var(--card-bg);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+    }
+
+    .filter-btn.active {
+      background: var(--accent-color);
+      color: var(--bg-color);
+      border-color: var(--accent-color);
+    }
+
     .blog-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -121,6 +154,13 @@
       border: 1px solid var(--border-color);
       padding: 2rem;
       transition: .3s;
+      opacity: 1;
+      max-height: none;
+      overflow: hidden;
+    }
+
+    .blog-card.hidden {
+      display: none;
     }
       
     .blog-card img {
@@ -146,6 +186,10 @@
       margin-bottom: 1rem;
       font-size: .85rem;
       color: var(--muted-color);
+    }
+
+    .blog-category {
+      text-transform: capitalize;
     }
 
     .blog-title a {
@@ -193,102 +237,102 @@
       <img src="IMG_8342 2.jpeg" alt="Workspace setup" class="blog-banner">
     </div>
 
+    <!-- Filter Tabs -->
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="economics">Economics</button>
+      <button class="filter-btn" data-filter="philosophy">Philosophy</button>
+      <button class="filter-btn" data-filter="tech">Tech</button>
+      <button class="filter-btn" data-filter="music">Music</button>
+    </div>
+
     <div class="blog-grid">
-      <article class="blog-card">
-  <div class="blog-meta">
-    <span>2026.02.28</span>
-    <span>Economics</span>
-  </div>
-  <h2 class="blog-title">
-    <a href="blog/econvol.html">Economic Volatility in the Hyper World</a>
-  </h2>
-  <p class="blog-excerpt">
-    Market uncertainty, policy unpredictability, and systemic fragility in contemporary capitalism. How Fed independence, geopolitical fragmentation, and achievement capitalism have made volatility structural rather than cyclical.
-  </p>
-</article>
+      <article class="blog-card" data-category="economics">
+        <div class="blog-meta">
+          <span>2026.02.28</span>
+          <span class="blog-category">Economics</span>
+        </div>
+        <h2 class="blog-title">
+          <a href="blog/econvol.html">Economic Volatility in the Hyper World</a>
+        </h2>
+        <p class="blog-excerpt">
+          Market uncertainty, policy unpredictability, and systemic fragility in contemporary capitalism. How Fed independence, geopolitical fragmentation, and achievement capitalism have made volatility structural rather than cyclical.
+        </p>
+      </article>
 
-<article class="blog-card">
-  <div class="blog-meta">
-    <span>2026.02.28</span>
-    <span>Philosophy</span>
-  </div>
-  <h2 class="blog-title">
-    <a href="blog/han.html">Byung-Chul Han: Philosophy of Exhaustion</a>
-  </h2>
-  <p class="blog-excerpt">
-    A diagnosis of burnout society, psychopolitics, and the erosion of contemplation. How modern capitalism operates through internalized compulsion rather than external coercion, and what resistance might look like.
-  </p>
-</article>
-      <article class="blog-card">
-  <img src="blog/Images/volatility-garch-comparison.svg" alt="GARCH vs Deep Learning Comparison">
-  <div class="blog-meta">
-    <span>2026.02.12</span>
-    <span>Research</span>
-  </div>
- 
-  <h2 class="blog-title">
-    <a href="blog/bayesian_volatility.html">Bayesian Machine Learning for Stock Market Volatility Forecasting</a>
-  </h2>
- 
-  <p class="blog-excerpt">
-    Hybrid framework combining realized GARCH structures with Bayesian deep learning for probabilistic volatility estimation.
-  </p>
-</article>
- 
-<!-- NEW POST: T.R.A.M Music Analysis -->
-<article class="blog-card">
-  <img src="blog/Images/tram-fusion-spectrum.svg" alt="T.R.A.M Genre Topology">
-  <div class="blog-meta">
-    <span>2026.02.12</span>
-    <span>Music</span>
-  </div>
- 
-  <h2 class="blog-title">
-    <a href="blog/tram.html">T.R.A.M — Precision, Chaos, and Modern Fusion</a>
-  </h2>
- 
-  <p class="blog-excerpt">
-    Technical analysis of avant-garde fusion: how harmonic complexity, structural innovation, and rhythmic mastery converge.
-  </p>
-</article>
+      <article class="blog-card" data-category="philosophy">
+        <div class="blog-meta">
+          <span>2026.02.28</span>
+          <span class="blog-category">Philosophy</span>
+        </div>
+        <h2 class="blog-title">
+          <a href="blog/han.html">Byung-Chul Han: Philosophy of Exhaustion</a>
+        </h2>
+        <p class="blog-excerpt">
+          A diagnosis of burnout society, psychopolitics, and the erosion of contemplation. How modern capitalism operates through internalized compulsion rather than external coercion, and what resistance might look like.
+        </p>
+      </article>
 
-<article class="blog-card">
-  <img src="merlin-thumbnail.jpeg" alt="Merlin Properties Stock Pitch"
-style="object-position: left 75%;">
-  <div class="blog-meta">
-    <span>2026.02.21</span>
-    <span>Finance</span>
-  </div>
-
-  <h2 class="blog-title">
-    <a href="blog/merlin.html">Merlin Properties Stock Pitch</a>
-  </h2>
-
-  <p class="blog-excerpt">
-    BUY recommendation on Iberia's largest REIT. Trading at 13% NAV discount with underappreciated data centre growth story.
-  </p>
-</article>
-      <article class="blog-card">
-        <img src="IMG_8353.jpeg" alt="Bayes in AI book page">
-
+      <article class="blog-card" data-category="tech">
+        <img src="blog/Images/volatility-garch-comparison.svg" alt="GARCH vs Deep Learning Comparison">
         <div class="blog-meta">
           <span>2026.02.12</span>
-          <span>Data Science</span>
+          <span class="blog-category">Tech</span>
         </div>
+        <h2 class="blog-title">
+          <a href="blog/bayesian_volatility.html">Bayesian Machine Learning for Stock Market Volatility Forecasting</a>
+        </h2>
+        <p class="blog-excerpt">
+          Hybrid framework combining realized GARCH structures with Bayesian deep learning for probabilistic volatility estimation.
+        </p>
+      </article>
 
+      <article class="blog-card" data-category="music">
+        <img src="blog/Images/tram-fusion-spectrum.svg" alt="T.R.A.M Genre Topology">
+        <div class="blog-meta">
+          <span>2026.02.12</span>
+          <span class="blog-category">Music</span>
+        </div>
+        <h2 class="blog-title">
+          <a href="blog/tram.html">T.R.A.M — Precision, Chaos, and Modern Fusion</a>
+        </h2>
+        <p class="blog-excerpt">
+          Technical analysis of avant-garde fusion: how harmonic complexity, structural innovation, and rhythmic mastery converge.
+        </p>
+      </article>
+
+      <article class="blog-card" data-category="economics">
+        <img src="merlin-thumbnail.jpeg" alt="Merlin Properties Stock Pitch" style="object-position: left 75%;">
+        <div class="blog-meta">
+          <span>2026.02.21</span>
+          <span class="blog-category">Economics</span>
+        </div>
+        <h2 class="blog-title">
+          <a href="blog/merlin.html">Merlin Properties Stock Pitch</a>
+        </h2>
+        <p class="blog-excerpt">
+          BUY recommendation on Iberia's largest REIT. Trading at 13% NAV discount with underappreciated data centre growth story.
+        </p>
+      </article>
+
+      <article class="blog-card" data-category="tech">
+        <img src="IMG_8353.jpeg" alt="Bayes in AI book page">
+        <div class="blog-meta">
+          <span>2026.02.12</span>
+          <span class="blog-category">Tech</span>
+        </div>
         <h2 class="blog-title">
           <a href="blog/bayes-theorem.html">Reading Bayes' Theorem and Tom Chivers</a>
         </h2>
-
         <p class="blog-excerpt">
           Reflections on probabilistic thinking, Bayesian reasoning, and intellectual humility in inference.
         </p>
       </article>
 
-      <article class="blog-card">
+      <article class="blog-card" data-category="tech">
         <div class="blog-meta">
           <span>2026.02.12</span>
-          <span>Finance</span>
+          <span class="blog-category">Tech</span>
         </div>
         <h2 class="blog-title">
           <a href="blog/finance-ml.html">Machine Learning in Finance</a>
@@ -298,10 +342,10 @@ style="object-position: left 75%;">
         </p>
       </article>
 
-      <article class="blog-card">
+      <article class="blog-card" data-category="economics">
         <div class="blog-meta">
           <span>2026.02.12</span>
-          <span>Economics</span>
+          <span class="blog-category">Economics</span>
         </div>
         <h2 class="blog-title">
           <a href="blog/armenia-economy.html">Macroeconomic Signals and Armenia</a>
@@ -311,27 +355,22 @@ style="object-position: left 75%;">
         </p>
       </article>
 
-      <!-- Covet snippet: entire card links directly to video -->
       <a href="https://hannan-n.github.io/Untitled.mp4" target="_blank" style="text-decoration:none;">
-<article class="blog-card">
-  <img src="thumbnail.png" alt="strumming">
-
-  <div class="blog-meta">
-    <span>2026.02.13</span>
-    <span>Music</span>
-  </div>
-
-  <h2 class="blog-title">
-    <a href="Untitled.mp4" target="_blank">
-      Strumming some Covet
-    </a>
-  </h2>
-
-  <p class="blog-excerpt">
-    Quick snippet from Shibuya.
-  </p>
-</article>
-
+        <article class="blog-card" data-category="music">
+          <img src="thumbnail.png" alt="strumming">
+          <div class="blog-meta">
+            <span>2026.02.13</span>
+            <span class="blog-category">Music</span>
+          </div>
+          <h2 class="blog-title">
+            <a href="Untitled.mp4" target="_blank">
+              Strumming some Covet
+            </a>
+          </h2>
+          <p class="blog-excerpt">
+            Quick snippet from Shibuya.
+          </p>
+        </article>
       </a>
 
     </div>
@@ -342,9 +381,39 @@ style="object-position: left 75%;">
   </footer>
 
   <script>
+    // Cursor tracking
     const cursorBg = document.getElementById('cursor-bg');
     document.addEventListener('mousemove', e => {
       cursorBg.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(255,255,255,0.07), transparent 60%)`;
+    });
+
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        // Filter cards
+        blogCards.forEach(card => {
+          if (filterValue === 'all') {
+            card.classList.remove('hidden');
+          } else {
+            const cardCategory = card.getAttribute('data-category');
+            if (cardCategory === filterValue) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          }
+        });
+      });
     });
   </script>
 
