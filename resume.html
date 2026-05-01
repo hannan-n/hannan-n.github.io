@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hannan</title>
+  <title>Experience - Hannan</title>
   <link rel="stylesheet" href="style.css"/>
   <style>
     :root {
@@ -11,7 +11,6 @@
       --text-color: #ffffff;
       --accent-color: #ffffff;
     }
-
     body {
       margin: 0;
       padding: 0;
@@ -20,14 +19,12 @@
       font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
     }
-
     header nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
     }
-
     header nav h1 a {
       font-family: monospace;
       font-size: 1.2rem;
@@ -35,52 +32,179 @@
       text-decoration: none;
       letter-spacing: 0.15em;
     }
-
     .nav-links {
       display: flex;
       gap: 2rem;
       list-style: none;
       margin: 0 auto;
     }
-
     .nav-links a {
       color: var(--text-color);
       text-decoration: none;
       font-weight: 500;
     }
-
+    .nav-links a.active {
+      color: var(--accent-color);
+      border-bottom: 2px solid var(--accent-color);
+    }
     main {
       position: relative;
       z-index: 2;
       padding: 2rem;
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
     }
-
     section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
       text-align: center;
       color: var(--accent-color);
     }
-
-    section p {
+    .section-subtitle {
       text-align: center;
+      font-size: 1.1rem;
+      color: #aaa;
+      margin-bottom: 3rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+    .experience-content {
+      display: grid;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .experience-card {
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.5rem;
+      background: rgba(255, 255, 255, 0.02);
+      transition: all 0.3s ease;
+    }
+    .experience-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.04);
+      transform: translateY(-2px);
+    }
+    .experience-card h3 {
+      font-size: 1.3rem;
+      margin: 0 0 0.25rem 0;
+      color: var(--accent-color);
+    }
+    .experience-card .role {
+      font-size: 0.95rem;
+      color: #888;
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+    .experience-card p {
+      margin: 0.75rem 0 0 0;
+      line-height: 1.6;
+      color: #ddd;
+      font-size: 0.95rem;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .skill-tag {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 2rem;
+      color: #aaa;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .cta-container {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+      border: 2px solid var(--accent-color);
+      cursor: pointer;
       font-size: 1rem;
+      letter-spacing: 0.05em;
     }
-
-    a {
+    .cta-button:hover {
+      background-color: transparent;
       color: var(--accent-color);
-      text-decoration: underline;
+      transform: translateY(-2px);
     }
-
-    footer {
-      text-align: center;
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
       padding: 1rem;
-      font-size: 0.9rem;
-      color: #777;
     }
-
+    .modal.active {
+      display: flex;
+    }
+    .modal-content {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 90vh;
+      background: var(--bg-color);
+      border-radius: 0.75rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .modal-header {
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-header h3 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-color);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0;
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s;
+    }
+    .modal-close:hover {
+      color: var(--accent-color);
+    }
+    .modal-body {
+      flex: 1;
+      overflow: auto;
+    }
+    .modal-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
     .cursor-bg {
       position: fixed;
       top: 0;
@@ -92,48 +216,126 @@
       z-index: 1;
       transition: background 0.2s ease-out;
     }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    @media (max-width: 768px) {
+      section h2 {
+        font-size: 2rem;
+      }
+      .experience-card {
+        padding: 1rem;
+      }
+      .experience-card h3 {
+        font-size: 1.1rem;
+      }
+      .cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 0.95rem;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="cursor-bg" id="cursor-bg"></div>
-
-<header>
-  <nav>
-    <h1><a href="about.html">HANNAN</a></h1>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="resume.html">Experience</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
-    </ul>
-  </nav>
-</header>
-
-
+  <header>
+    <nav>
+      <h1><a href="about.html">HANNAN</a></h1>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html" class="active">Experience</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
-  <section>
-    <h2>Experience</h2>
+    <section>
+      <h2>Experience</h2>
+      
+      <div class="experience-content">
+        <div class="experience-card">
+          <h3>Equity Analyst (Real Estate)</h3>
+          <p class="role">Irish Student Managed Fund (ISMF), Cork • Oct 2025 – Present</p>
+          <p>Sourcing and pitching real estate stock ideas to the investment committee. One pitch selected for active portfolio (€5k notional). Analyzing REIT financials using DCF valuation and comparable company multiples to assess asset quality, dividend sustainability, and capital allocation.</p>
+          <div class="skills">
+            <span class="skill-tag">DCF Valuation</span>
+            <span class="skill-tag">Financial Analysis</span>
+            <span class="skill-tag">Equity Research</span>
+            <span class="skill-tag">Investment Strategy</span>
+          </div>
+        </div>
 
-    <p style="text-align:center; margin-bottom: 1.5rem;">
-      If the PDF does not load, 
-      <a href="Hannan_Nabi_CV.pdf" target="_blank">click here to open it</a>.
-    </p>
+        <div class="experience-card">
+          <h3>Credit Analyst (Sovereign & Macro)</h3>
+          <p class="role">UCC Student Managed Fund - Credit Team, Cork • Oct 2025 – Present</p>
+          <p>Researching sovereign and emerging market credit. Analyzing macroeconomic trends, debt trajectories, and refinancing risks. Reading Bloomberg terminals and synthesizing complex financial data into actionable investment theses for the portfolio team.</p>
+          <div class="skills">
+            <span class="skill-tag">Credit Risk</span>
+            <span class="skill-tag">Macro Analysis</span>
+            <span class="skill-tag">Bloomberg Terminal</span>
+            <span class="skill-tag">Portfolio Analysis</span>
+          </div>
+        </div>
 
-    <iframe 
-      src="Hannan_Nabi_CV.pdf"
-      style="
-        width:100%;
-        height:80vh;
-        border:none;
-        border-radius: 0.75rem;
-        overflow:hidden;
-      ">
-    </iframe>
+        <div class="experience-card">
+          <h3>Placement Consultant</h3>
+          <p class="role">Masters' Union, Gurugram • Feb 2024 – Jul 2024</p>
+          <p>Managed placement operations for 50+ graduate candidates, achieving 98% placement success vs. 72% industry average. Cultivated 200+ company partnerships and expanded the recruitment network by 40% in 6 months. Built automated reporting dashboards reducing turnaround by 30%.</p>
+          <div class="skills">
+            <span class="skill-tag">Operations</span>
+            <span class="skill-tag">Automation</span>
+            <span class="skill-tag">Dashboards</span>
+            <span class="skill-tag">Stakeholder Management</span>
+          </div>
+        </div>
 
-  </section>
-</main>
+        <div class="experience-card">
+          <h3>Associate Content Lead (Instructional Designer)</h3>
+          <p class="role">NIIT Limited, Gurugram • Aug 2022 – Nov 2023</p>
+          <p>Led 35+ corporate training initiatives for Fortune 500 clients. Designed and delivered 25+ technical demonstrations while managing 10+ concurrent accounts. Analyzed engagement data in Tableau, driving an 18% improvement in completion rates.</p>
+          <div class="skills">
+            <span class="skill-tag">Training Design</span>
+            <span class="skill-tag">Tableau</span>
+            <span class="skill-tag">Data Analysis</span>
+            <span class="skill-tag">Client Management</span>
+          </div>
+        </div>
 
+        <div class="experience-card">
+          <h3>Financial Analyst (Intern)</h3>
+          <p class="role">HDFC Bank, Jammu & Kashmir • Apr 2019 – Aug 2019</p>
+          <p>Assessed creditworthiness of 50+ SME loan applications using financial ratio analysis and risk scoring. Enhanced credit scoring models improving approval accuracy by 20% and reducing regulatory discrepancies by 95%.</p>
+          <div class="skills">
+            <span class="skill-tag">Credit Analysis</span>
+            <span class="skill-tag">Risk Scoring</span>
+            <span class="skill-tag">Financial Modeling</span>
+            <span class="skill-tag">Banking</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-container">
+        <button class="cta-button" id="viewResume">View Full Resume</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="resumeModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Full Resume</h3>
+        <button class="modal-close" id="closeModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe src="Hannan_Nabi_CV.pdf"></iframe>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2025 Hannan Nabi</p>
@@ -143,6 +345,30 @@
     const cursorBg = document.getElementById('cursor-bg');
     document.addEventListener('mousemove', (e) => {
       cursorBg.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(255,255,255,0.07), transparent 60%)`;
+    });
+
+    const viewResumeBtn = document.getElementById('viewResume');
+    const resumeModal = document.getElementById('resumeModal');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    viewResumeBtn.addEventListener('click', () => {
+      resumeModal.classList.add('active');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      resumeModal.classList.remove('active');
+    });
+
+    resumeModal.addEventListener('click', (e) => {
+      if (e.target === resumeModal) {
+        resumeModal.classList.remove('active');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && resumeModal.classList.contains('active')) {
+        resumeModal.classList.remove('active');
+      }
     });
   </script>
 </body>
